@@ -1,0 +1,60 @@
+{
+  "name": "GrammarPoint",
+  "type": "object",
+  "properties": {
+    "pattern": {
+      "type": "string",
+      "description": "Grammar pattern in Japanese"
+    },
+    "meaning_en": {
+      "type": "string"
+    },
+    "explanation_en": {
+      "type": "string",
+      "description": "Detailed explanation"
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "N5",
+        "N4",
+        "N3",
+        "N2",
+        "N1"
+      ]
+    },
+    "examples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sentence": {
+            "type": "string"
+          },
+          "romaji": {
+            "type": "string"
+          },
+          "translation": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "particles",
+        "verb_forms",
+        "expressions",
+        "conditionals",
+        "honorifics",
+        "connectors"
+      ]
+    }
+  },
+  "required": [
+    "pattern",
+    "meaning_en",
+    "level"
+  ]
+}

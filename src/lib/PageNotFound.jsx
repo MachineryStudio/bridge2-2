@@ -20,12 +20,13 @@ export default function PageNotFound({}) {
     });
     
     return (
-        <div className="min-h-screen flex items-center justify-center p-6 bg-slate-50">
+        <div className="min-h-screen flex items-center justify-center p-6 bg-background washi-bg">
             <div className="max-w-md w-full">
                 <div className="text-center space-y-6">
                     {/* 404 Error Code */}
                     <div className="space-y-2">
-                        <h1 className="text-7xl font-light text-slate-300">404</h1>
+                        <h1 className="text-7xl font-light text-muted-foreground/30">404</h1>
+                        <p className="font-jp text-lg text-primary/50">ページが見つかりません</p>
                         <div className="h-0.5 w-16 bg-slate-200 mx-auto"></div>
                     </div>
                     

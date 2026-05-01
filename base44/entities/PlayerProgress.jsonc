@@ -1,0 +1,60 @@
+{
+  "name": "PlayerProgress",
+  "type": "object",
+  "properties": {
+    "player_name": {
+      "type": "string"
+    },
+    "coins": {
+      "type": "number",
+      "default": 0
+    },
+    "xp": {
+      "type": "number",
+      "default": 0
+    },
+    "level": {
+      "type": "number",
+      "default": 1
+    },
+    "streak_days": {
+      "type": "number",
+      "default": 0
+    },
+    "verbs_mastered": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "grammar_mastered": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "games_played": {
+      "type": "number",
+      "default": 0
+    },
+    "best_streak": {
+      "type": "number",
+      "default": 0
+    },
+    "preferred_language": {
+      "type": "string",
+      "default": "en"
+    },
+    "daily_challenge_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "daily_challenge_completed": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "player_name"
+  ]
+}
