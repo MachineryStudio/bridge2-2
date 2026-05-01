@@ -1,11 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLang } from '@/lib/LanguageContext';
 import { languageNames } from '@/lib/i18n';
 import { Button } from '@/components/ui/button';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Globe, Menu, X, Flame, Coins, Zap } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+function LangPicker({ lang, setLang }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const handler = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
+
+  return (
+    <div className="relative" ref={ref}>
+      <Button variant="ghost" size="sm" className="gap-1.5 text-muted-foreground" onClick={() => setOpen(o => !o)}>
+        <Globe className="w-4 h-4" />
+        <span className="text-xs">{languageNames[lang]?.flag}</span>
+      </Button>
+      {open && (
+        <div className="absolute right-0 top-full mt-1 w-48 bg-popover border border-border rounded-md shadow-lg z-50 py-1">
+          {Object.entries(languageNames).map(([code, { name, flag }]) => (
+            <button
+              key={code}
+              className={`w-full text-left px-3 py-1.5 text-sm flex items-center gap-2 hover:bg-accent hover:text-accent-foreground transition-colors ${lang === code ? 'text-primary bg-primary/5' : 'text-popover-foreground'}`}
+              onClick={() => { setLang(code); setOpen(false); }}
+            >
+              <span>{flag}</span>{name}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Navbar({ playerStats }) {
   const { lang, setLang, t } = useLang();
@@ -75,26 +107,7 @@ export default function Navbar({ playerStats }) {
               </div>
             )}
 
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="gap-1.5 text-muted-foreground">
-                  <Globe className="w-4 h-4" />
-                  <span className="text-xs">{languageNames[lang]?.flag}</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48">
-                {Object.entries(languageNames).map(([code, { name, flag }]) => (
-                  <DropdownMenuItem
-                    key={code}
-                    onClick={() => setLang(code)}
-                    className={lang === code ? 'bg-primary/10 text-primary' : ''}
-                  >
-                    <span className="mr-2">{flag}</span>
-                    {name}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <LangPicker lang={lang} setLang={setLang} />
 
             {/* Mobile menu toggle */}
             <Button variant="ghost" size="sm" className="md:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
