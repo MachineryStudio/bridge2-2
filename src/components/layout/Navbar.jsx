@@ -40,12 +40,15 @@ export default function Navbar({ playerStats }) {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center glow-gold">
-              <span className="text-primary-foreground font-jp font-bold text-sm">橋</span>
-            </div>
-            <div className="hidden sm:block">
-              <span className="font-latin font-bold text-foreground">Bridge2</span>
-              <span className="font-jp text-xs text-primary ml-1">ブリッジ</span>
+            <img
+              src="https://media.base44.com/images/public/69f421629a32baa29433f382/c02d2eefc_Screenshot2026-05-02111817.jpg"
+              alt="Lighthouse logo"
+              className="h-9 w-auto object-contain rounded"
+            />
+            <div className="hidden sm:block leading-tight">
+              <span className="font-latin font-bold text-foreground tracking-wide">LIGHTHOUSE</span>
+              <span className="font-jp text-primary font-bold ml-1">橋</span>
+              <div className="text-[9px] text-muted-foreground tracking-widest uppercase">Kioku Interactive</div>
             </div>
           </Link>
 

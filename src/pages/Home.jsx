@@ -158,11 +158,15 @@ export default function Home() {
       <footer className="border-t border-border/50 py-8 px-4">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-md bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-jp text-xs font-bold">橋</span>
+            <img
+              src="https://media.base44.com/images/public/69f421629a32baa29433f382/c02d2eefc_Screenshot2026-05-02111817.jpg"
+              alt="Lighthouse logo"
+              className="h-8 w-auto object-contain rounded"
+            />
+            <div className="leading-tight">
+              <div className="font-bold text-foreground text-sm tracking-wide">LIGHTHOUSE <span className="font-jp text-primary">橋</span></div>
+              <div className="text-[9px] text-muted-foreground tracking-widest uppercase">Kioku Interactive</div>
             </div>
-            <span className="font-bold text-foreground text-sm">Bridge2</span>
-            <span className="font-jp text-xs text-muted-foreground">ブリッジ2日本語</span>
           </div>
           <p className="text-xs text-muted-foreground">Interactive Japanese Memory Game</p>
         </div>
