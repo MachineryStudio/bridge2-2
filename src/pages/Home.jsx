@@ -21,9 +21,9 @@ export default function Home() {
       {/* Hero */}
       <section className="relative overflow-hidden py-20 sm:py-32 px-4">
         {/* Decorative elements */}
-        <div className="absolute top-20 left-10 font-jp text-8xl text-primary/5 font-black select-none hidden lg:block">橋</div>
-        <div className="absolute bottom-20 right-10 font-jp text-8xl text-primary/5 font-black select-none hidden lg:block">学</div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 font-jp text-8xl text-primary/10 font-black select-none hidden lg:block">橋</div>
+        <div className="absolute bottom-20 right-10 font-jp text-8xl text-primary/10 font-black select-none hidden lg:block">学</div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/8 rounded-full blur-3xl" />
 
         <div className="relative max-w-4xl mx-auto text-center">
           <motion.div
@@ -31,9 +31,9 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-8">
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-xs text-primary font-medium">{t('appNameJp')}</span>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/15 border border-accent/40 mb-8">
+              <Sparkles className="w-4 h-4 text-accent" />
+              <span className="text-xs text-accent font-semibold tracking-wide">{t('appNameJp')}</span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-foreground leading-tight whitespace-pre-line">
@@ -64,7 +64,7 @@ export default function Home() {
             {['食', '書', '読', '話', '見', '行', '来', '飲'].map((char, i) => (
               <motion.span
                 key={char}
-                className="absolute font-jp text-primary/[0.04] font-black"
+                className="absolute font-jp text-primary/[0.07] font-black"
                 style={{
                   fontSize: `${30 + Math.random() * 40}px`,
                   top: `${10 + Math.random() * 80}%`,
@@ -155,7 +155,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border/50 py-8 px-4">
+      <footer className="border-t border-border py-8 px-4 bg-primary/5">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <img
