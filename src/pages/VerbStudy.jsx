@@ -5,31 +5,65 @@ import { useLang } from '@/lib/LanguageContext';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, BookOpen, ChevronDown, ChevronUp } from 'lucide-react';
+import { Search, BookOpen, Menu, Download } from 'lucide-react';
 import LevelBadge from '@/components/shared/LevelBadge';
 import SpeakButton from '@/components/shared/SpeakButton';
-import VerbDetailCard from '@/components/verbs/VerbDetailCard';
+import ConjugationDrawer from '@/components/verbs/ConjugationDrawer';
 import { verbData } from '@/lib/verbData';
 
 const LEVELS = ['all', 'N5', 'N4', 'N3', 'N2', 'N1'];
 const groupColor = { ichidan: 'bg-emerald-500', godan: 'bg-blue-500', irregular: 'bg-orange-500' };
 
+function exportToCSV(verbs) {
+  const formKeys = [
+    'present','present_polite','past','past_polite',
+    'negative','negative_polite','neg_past','neg_past_polite',
+    'te_form','neg_te','ing_form','tai_form',
+    'potential','potential_neg','volitional','passive',
+    'causative','imperative','conditional','conditional_neg'
+  ];
+
+  const headers = [
+    'Dictionary','Hiragana','Romaji','Meaning','Group','Level',
+    ...formKeys.map(k => `${k} (kanji)`),
+    ...formKeys.map(k => `${k} (romaji)`),
+    'Example (JP)','Example (EN)'
+  ];
+
+  const rows = verbs.map(v => [
+    v.dictionary, v.hiragana, v.romaji, v.meaning_en, v.group, v.level,
+    ...formKeys.map(k => v.forms?.[k] || ''),
+    ...formKeys.map(k => v.forms_romaji?.[k] || ''),
+    v.example_sentence || '', v.example_sentence_en || ''
+  ]);
+
+  const csvContent = [headers, ...rows]
+    .map(row => row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(','))
+    .join('\n');
+
+  const blob = new Blob(['\uFEFF' + csvContent], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'japanese_verbs.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
 export default function VerbStudy() {
   const { t } = useLang();
   const [search, setSearch] = useState('');
   const [levelFilter, setLevelFilter] = useState('all');
-  const [expandedId, setExpandedId] = useState(null);
+  const [drawerVerb, setDrawerVerb] = useState(null);
 
   const { data: verbs, isLoading } = useQuery({
     queryKey: ['verbs'],
     queryFn: async () => {
       const data = await base44.entities.Verb.list('-created_date', 500);
-      // If DB is empty or far fewer verbs than our data, seed with our verbData
       if (data.length < verbData.length) {
         const existing = new Set(data.map(v => v.dictionary));
         const toAdd = verbData.filter(v => !existing.has(v.dictionary));
         if (toAdd.length > 0) {
-          // Batch insert in chunks of 50
           for (let i = 0; i < toAdd.length; i += 50) {
             await base44.entities.Verb.bulkCreate(toAdd.slice(i, i + 50));
           }
@@ -51,15 +85,24 @@ export default function VerbStudy() {
     return matchSearch && matchLevel;
   });
 
-  const toggleExpand = (id) => setExpandedId(prev => prev === id ? null : id);
-
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
       {/* Header */}
       <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="mb-6">
-        <div className="flex items-center gap-3 mb-1">
-          <BookOpen className="w-6 h-6 text-primary" />
-          <h1 className="text-2xl font-bold text-foreground">{t('verbStudy')}</h1>
+        <div className="flex items-center justify-between mb-1">
+          <div className="flex items-center gap-3">
+            <BookOpen className="w-6 h-6 text-primary" />
+            <h1 className="text-2xl font-bold text-foreground">{t('verbStudy')}</h1>
+          </div>
+          <Button
+            variant="outline"
+            size="sm"
+            className="gap-2 border-border/50 text-muted-foreground hover:text-foreground"
+            onClick={() => exportToCSV(filtered)}
+          >
+            <Download className="w-4 h-4" />
+            Export CSV
+          </Button>
         </div>
         <p className="text-muted-foreground text-sm">{filtered.length} {t('totalVerbs').toLowerCase()}</p>
       </motion.div>
@@ -90,11 +133,23 @@ export default function VerbStudy() {
         </div>
       </div>
 
+      {/* Column headers */}
+      <div className="hidden sm:flex items-center gap-3 px-4 mb-1 text-xs text-muted-foreground font-medium">
+        <div className="w-1.5 shrink-0" />
+        <div className="w-20 shrink-0">Kanji</div>
+        <div className="w-8 shrink-0" />
+        <div className="w-36 shrink-0">Romaji</div>
+        <div className="w-24 shrink-0 hidden md:block">Hiragana</div>
+        <div className="flex-1">Meaning</div>
+        <div className="w-10 shrink-0 hidden sm:block">Level</div>
+        <div className="w-8 shrink-0">Forms</div>
+      </div>
+
       {/* Legend */}
-      <div className="flex items-center gap-4 mb-4 text-xs text-muted-foreground">
-        <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block" /> Ichidan (る)</span>
-        <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-blue-500 inline-block" /> Godan (う)</span>
-        <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-orange-500 inline-block" /> Irregular</span>
+      <div className="flex items-center gap-4 mb-3 text-xs text-muted-foreground">
+        <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" /> Ichidan</span>
+        <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-blue-500 inline-block" /> Godan</span>
+        <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-orange-500 inline-block" /> Irregular</span>
       </div>
 
       {/* Loading */}
@@ -106,73 +161,60 @@ export default function VerbStudy() {
       )}
 
       {/* Verb list */}
-      <div className="space-y-2">
+      <div className="space-y-1">
         {filtered.map((verb) => (
-          <div key={verb.id}>
-            {/* Row */}
-            <motion.div
-              layout
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer border transition-all duration-200 ${
-                expandedId === verb.id
-                  ? 'bg-primary/5 border-primary/30'
-                  : 'bg-card border-border/50 hover:border-primary/20 hover:bg-card/80'
-              }`}
-              onClick={() => toggleExpand(verb.id)}
-            >
-              {/* Group color */}
-              <div className={`w-1.5 h-10 rounded-full shrink-0 ${groupColor[verb.group] || 'bg-muted'}`} />
+          <motion.div
+            key={verb.id}
+            layout
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="flex items-center gap-3 px-4 py-3 rounded-lg bg-card border border-border/50 hover:border-primary/20 hover:bg-card/80 transition-all duration-150"
+          >
+            {/* Group color bar */}
+            <div className={`w-1.5 h-10 rounded-full shrink-0 ${groupColor[verb.group] || 'bg-muted'}`} />
 
-              {/* Dictionary */}
-              <div className="w-20 shrink-0">
-                <span className="font-jp text-xl font-bold text-foreground">{verb.dictionary}</span>
-              </div>
+            {/* Kanji */}
+            <div className="w-20 shrink-0">
+              <span className="font-jp text-xl font-bold text-foreground">{verb.dictionary}</span>
+            </div>
 
-              {/* Speak */}
+            {/* Speak kanji */}
+            <div className="w-8 shrink-0" onClick={e => e.stopPropagation()}>
+              <SpeakButton text={verb.dictionary} size="sm" />
+            </div>
+
+            {/* Romaji + speak romaji */}
+            <div className="w-36 shrink-0 hidden sm:flex items-center gap-1">
+              <span className="text-sm font-medium text-foreground/80">{verb.romaji}</span>
               <div onClick={e => e.stopPropagation()}>
-                <SpeakButton text={verb.dictionary} size="sm" />
+                <SpeakButton text={verb.hiragana} size="sm" />
               </div>
+            </div>
 
-              {/* Romaji */}
-              <div className="w-28 shrink-0 hidden sm:block">
-                <span className="text-sm font-medium text-foreground/80">{verb.romaji}</span>
-              </div>
+            {/* Hiragana */}
+            <div className="w-24 shrink-0 hidden md:block">
+              <span className="font-jp text-sm text-primary">{verb.hiragana}</span>
+            </div>
 
-              {/* Hiragana */}
-              <div className="w-24 shrink-0 hidden md:block">
-                <span className="font-jp text-sm text-primary">{verb.hiragana}</span>
-              </div>
+            {/* Meaning */}
+            <div className="flex-1 min-w-0">
+              <span className="text-sm text-foreground/80 truncate block">{verb.meaning_en}</span>
+            </div>
 
-              {/* Meaning */}
-              <div className="flex-1 min-w-0">
-                <span className="text-sm text-foreground/80 truncate block">{verb.meaning_en}</span>
-              </div>
+            {/* Level */}
+            <LevelBadge level={verb.level} className="shrink-0 hidden sm:flex" />
 
-              {/* Level */}
-              <LevelBadge level={verb.level} className="shrink-0 hidden sm:flex" />
-
-              {/* Expand chevron */}
-              <div className="shrink-0 text-muted-foreground">
-                {expandedId === verb.id ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-              </div>
-            </motion.div>
-
-            {/* Expanded detail */}
-            <AnimatePresence>
-              {expandedId === verb.id && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="overflow-hidden mt-1 mb-2"
-                >
-                  <VerbDetailCard verb={verb} onClose={() => setExpandedId(null)} />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
+            {/* Hamburger — open conjugation drawer */}
+            <Button
+              variant="ghost"
+              size="sm"
+              className="shrink-0 h-8 w-8 p-0 text-muted-foreground hover:text-primary"
+              onClick={(e) => { e.stopPropagation(); setDrawerVerb(verb); }}
+              title="View conjugation"
+            >
+              <Menu className="w-4 h-4" />
+            </Button>
+          </motion.div>
         ))}
       </div>
 
@@ -181,6 +223,11 @@ export default function VerbStudy() {
           <p className="font-jp text-4xl text-muted-foreground/20 mb-2">見つからない</p>
           <p className="text-muted-foreground text-sm">No verbs found for "{search}"</p>
         </div>
+      )}
+
+      {/* Conjugation drawer */}
+      {drawerVerb && (
+        <ConjugationDrawer verb={drawerVerb} onClose={() => setDrawerVerb(null)} />
       )}
     </div>
   );

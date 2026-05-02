@@ -174,10 +174,15 @@ export default function VerbDetailCard({ verb, onClose }) {
         <div className="px-5 py-3 bg-secondary/20 border-b border-border/30">
           <p className="text-sm text-foreground">{verb.meaning_en}</p>
           {verb.example_sentence && (
-            <div className="flex items-center gap-1 mt-1">
-              <span className="font-jp text-xs text-primary">{verb.example_sentence}</span>
-              <SpeakButton text={verb.example_sentence} size="sm" />
-              <span className="text-xs text-muted-foreground">— {verb.example_sentence_en}</span>
+            <div className="mt-1.5">
+              <div className="flex items-center gap-1">
+                <span className="font-jp text-xs text-primary">{verb.example_sentence}</span>
+                <SpeakButton text={verb.example_sentence} size="sm" />
+              </div>
+              {verb.example_sentence_romaji && (
+                <p className="text-xs text-muted-foreground italic">{verb.example_sentence_romaji}</p>
+              )}
+              <p className="text-xs text-muted-foreground">{verb.example_sentence_en}</p>
             </div>
           )}
         </div>
