@@ -5,10 +5,12 @@ import { useLang } from '@/lib/LanguageContext';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, BookOpen, Menu, Download } from 'lucide-react';
+import { Search, BookOpen, Menu, Download, Tag, X } from 'lucide-react';
 import LevelBadge from '@/components/shared/LevelBadge';
 import SpeakButton from '@/components/shared/SpeakButton';
 import ConjugationDrawer from '@/components/verbs/ConjugationDrawer';
+import TagManagerModal from '@/components/verbs/TagManagerModal';
+import VerbTagAssigner from '@/components/verbs/VerbTagAssigner';
 import { verbData } from '@/lib/verbData';
 
 const LEVELS = ['all', 'N5', 'N4', 'N3', 'N2', 'N1'];
@@ -54,7 +56,9 @@ export default function VerbStudy() {
   const { t } = useLang();
   const [search, setSearch] = useState('');
   const [levelFilter, setLevelFilter] = useState('all');
+  const [tagFilter, setTagFilter] = useState(null); // tag id or null
   const [drawerVerb, setDrawerVerb] = useState(null);
+  const [showTagManager, setShowTagManager] = useState(false);
 
   const { data: verbs, isLoading } = useQuery({
     queryKey: ['verbs'],
@@ -75,6 +79,13 @@ export default function VerbStudy() {
     initialData: [],
   });
 
+  const { data: tags = [] } = useQuery({
+    queryKey: ['verbTags'],
+    queryFn: () => base44.entities.VerbTag.list(),
+  });
+
+  const activeTag = tags.find(t => t.id === tagFilter) || null;
+
   const filtered = verbs.filter(v => {
     const matchSearch = !search ||
       v.dictionary?.includes(search) ||
@@ -82,7 +93,8 @@ export default function VerbStudy() {
       v.hiragana?.includes(search) ||
       v.meaning_en?.toLowerCase().includes(search.toLowerCase());
     const matchLevel = levelFilter === 'all' || v.level === levelFilter;
-    return matchSearch && matchLevel;
+    const matchTag = !tagFilter || (activeTag?.verb_ids || []).includes(v.id);
+    return matchSearch && matchLevel && matchTag;
   });
 
   return (
@@ -94,15 +106,26 @@ export default function VerbStudy() {
             <BookOpen className="w-6 h-6 text-primary" />
             <h1 className="text-2xl font-bold text-foreground">{t('verbStudy')}</h1>
           </div>
-          <Button
-            variant="outline"
-            size="sm"
-            className="gap-2 border-border/50 text-muted-foreground hover:text-foreground"
-            onClick={() => exportToCSV(filtered)}
-          >
-            <Download className="w-4 h-4" />
-            Export CSV
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              className="gap-2 border-border/50 text-muted-foreground hover:text-foreground"
+              onClick={() => setShowTagManager(true)}
+            >
+              <Tag className="w-4 h-4" />
+              Tags
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="gap-2 border-border/50 text-muted-foreground hover:text-foreground"
+              onClick={() => exportToCSV(filtered)}
+            >
+              <Download className="w-4 h-4" />
+              Export CSV
+            </Button>
+          </div>
         </div>
         <p className="text-muted-foreground text-sm">{filtered.length} {t('totalVerbs').toLowerCase()}</p>
       </motion.div>
@@ -132,6 +155,31 @@ export default function VerbStudy() {
           ))}
         </div>
       </div>
+
+      {/* Tag filter row */}
+      {tags.length > 0 && (
+        <div className="flex items-center gap-2 mb-4 flex-wrap">
+          <span className="text-xs text-muted-foreground font-medium">Filter by tag:</span>
+          <button
+            className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border transition-all ${!tagFilter ? 'bg-primary/20 border-primary/50 text-primary' : 'bg-secondary border-border/50 text-muted-foreground hover:border-primary/30'}`}
+            onClick={() => setTagFilter(null)}
+          >
+            All
+          </button>
+          {tags.map(tag => (
+            <button
+              key={tag.id}
+              className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border transition-all ${tagFilter === tag.id ? 'border-white/30 text-white' : 'bg-secondary border-border/50 text-muted-foreground hover:border-primary/30'}`}
+              style={tagFilter === tag.id ? { backgroundColor: tag.color + '33', borderColor: tag.color, color: tag.color } : {}}
+              onClick={() => setTagFilter(tagFilter === tag.id ? null : tag.id)}
+            >
+              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: tag.color || '#6366f1' }} />
+              {tag.name}
+              <span className="opacity-60">({(tag.verb_ids || []).length})</span>
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* Column headers */}
       <div className="hidden sm:flex items-center gap-3 px-4 mb-1 text-xs text-muted-foreground font-medium">
@@ -204,6 +252,11 @@ export default function VerbStudy() {
             {/* Level */}
             <LevelBadge level={verb.level} className="shrink-0 hidden sm:flex" />
 
+            {/* Tag assigner */}
+            <div onClick={e => e.stopPropagation()}>
+              <VerbTagAssigner verb={verb} />
+            </div>
+
             {/* Hamburger — open conjugation drawer */}
             <Button
               variant="ghost"
@@ -229,6 +282,11 @@ export default function VerbStudy() {
       {drawerVerb && (
         <ConjugationDrawer verb={drawerVerb} onClose={() => setDrawerVerb(null)} />
       )}
+
+      {/* Tag manager modal */}
+      <AnimatePresence>
+        {showTagManager && <TagManagerModal onClose={() => setShowTagManager(false)} />}
+      </AnimatePresence>
     </div>
   );
 }
