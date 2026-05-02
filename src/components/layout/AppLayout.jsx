@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import { base44 } from '@/api/base44Client';
 import { useQuery } from '@tanstack/react-query';
+import MiyuChatbot from '@/components/chatbot/MiyuChatbot';
 
 export default function AppLayout() {
   const { data: progressList } = useQuery({
@@ -22,6 +23,7 @@ export default function AppLayout() {
       <main className="pt-16">
         <Outlet />
       </main>
+      <MiyuChatbot />
     </div>
   );
 }
