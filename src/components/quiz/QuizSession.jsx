@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { CheckCircle, XCircle, Flame, Timer } from 'lucide-react';
 import SpeakButton from '@/components/shared/SpeakButton';
 import { speakJapanese } from '@/lib/speechUtils';
+import { base44 } from '@/api/base44Client';
 
 const FORM_KEYS = ['present', 'past', 'negative', 'te_form', 'potential', 'volitional', 'present_polite', 'past_polite'];
 const FORM_LABELS = {
@@ -59,6 +60,8 @@ export default function QuizSession({ verbs, config, onFinish }) {
 
   const [timeLeft, setTimeLeft] = useState(duration);
   const [question, setQuestion] = useState(null);
+  // Store the verb object alongside the question for tracking
+  const [currentVerb, setCurrentVerb] = useState(null);
   const [selected, setSelected] = useState(null);
   const [correct, setCorrect] = useState(0);
   const [wrong, setWrong] = useState(0);
@@ -66,6 +69,8 @@ export default function QuizSession({ verbs, config, onFinish }) {
   const [bestStreak, setBestStreak] = useState(0);
   const [total, setTotal] = useState(0);
   const timerRef = useRef(null);
+  // verbId -> { correct, wrong } accumulated this session
+  const verbSessionMap = useRef({});
 
   const nextQuestion = useCallback(() => {
     if (!pool.length) return;
@@ -76,6 +81,7 @@ export default function QuizSession({ verbs, config, onFinish }) {
     const q = buildQuestion(verb, pool, type);
     if (!q) return nextQuestion();
     setQuestion(q);
+    setCurrentVerb(verb);
     setSelected(null);
   }, [pool, questionType]);
 
@@ -98,15 +104,59 @@ export default function QuizSession({ verbs, config, onFinish }) {
 
   useEffect(() => {
     if (timeLeft === 0) {
+      saveVerbProgress();
       onFinish({ correct, wrong, total, bestStreak, perfect: wrong === 0 && total > 0 });
     }
   }, [timeLeft]);
+
+  const saveVerbProgress = async () => {
+    const map = verbSessionMap.current;
+    if (!Object.keys(map).length) return;
+    const user = await base44.auth.me();
+    // Fetch existing progress records for these verbs
+    const existing = await base44.entities.VerbProgress.filter({ created_by: user.email });
+    const existingMap = {};
+    existing.forEach(r => { existingMap[r.verb_id] = r; });
+
+    for (const [verbId, counts] of Object.entries(map)) {
+      const verb = pool.find(v => v.id === verbId);
+      if (!verb) continue;
+      if (existingMap[verbId]) {
+        const rec = existingMap[verbId];
+        await base44.entities.VerbProgress.update(rec.id, {
+          correct: (rec.correct || 0) + counts.correct,
+          wrong: (rec.wrong || 0) + counts.wrong,
+          last_seen: new Date().toISOString().split('T')[0],
+        });
+      } else {
+        await base44.entities.VerbProgress.create({
+          verb_id: verbId,
+          verb_dictionary: verb.dictionary,
+          verb_hiragana: verb.hiragana,
+          verb_meaning: verb.meaning_en,
+          verb_level: verb.level,
+          correct: counts.correct,
+          wrong: counts.wrong,
+          last_seen: new Date().toISOString().split('T')[0],
+        });
+      }
+    }
+  };
 
   const handleSelect = (option) => {
     if (selected !== null || timeLeft === 0) return;
     setSelected(option);
     const isCorrect = option === question.correct;
     setTotal(t => t + 1);
+
+    // Track per-verb in session map
+    if (currentVerb?.id) {
+      const prev = verbSessionMap.current[currentVerb.id] || { correct: 0, wrong: 0 };
+      verbSessionMap.current[currentVerb.id] = {
+        correct: prev.correct + (isCorrect ? 1 : 0),
+        wrong: prev.wrong + (isCorrect ? 0 : 1),
+      };
+    }
 
     if (isCorrect) {
       setCorrect(c => c + 1);

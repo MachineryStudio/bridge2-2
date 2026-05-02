@@ -1,0 +1,42 @@
+{
+  "name": "VerbProgress",
+  "type": "object",
+  "properties": {
+    "verb_id": {
+      "type": "string",
+      "description": "ID of the verb"
+    },
+    "verb_dictionary": {
+      "type": "string",
+      "description": "Dictionary form of the verb (cached for display)"
+    },
+    "verb_hiragana": {
+      "type": "string"
+    },
+    "verb_meaning": {
+      "type": "string"
+    },
+    "verb_level": {
+      "type": "string"
+    },
+    "correct": {
+      "type": "number",
+      "default": 0,
+      "description": "Total correct answers for this verb"
+    },
+    "wrong": {
+      "type": "number",
+      "default": 0,
+      "description": "Total wrong answers for this verb"
+    },
+    "last_seen": {
+      "type": "string",
+      "format": "date",
+      "description": "Date last practiced"
+    }
+  },
+  "required": [
+    "verb_id",
+    "verb_dictionary"
+  ]
+}
