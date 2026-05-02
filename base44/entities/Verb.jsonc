@@ -18,12 +18,6 @@
       "type": "string",
       "description": "English meaning"
     },
-    "meaning_fr": {
-      "type": "string"
-    },
-    "meaning_es": {
-      "type": "string"
-    },
     "group": {
       "type": "string",
       "enum": [
@@ -66,10 +60,28 @@
         "negative_polite": {
           "type": "string"
         },
+        "neg_past": {
+          "type": "string"
+        },
+        "neg_past_polite": {
+          "type": "string"
+        },
         "te_form": {
           "type": "string"
         },
+        "neg_te": {
+          "type": "string"
+        },
+        "ing_form": {
+          "type": "string"
+        },
+        "tai_form": {
+          "type": "string"
+        },
         "potential": {
+          "type": "string"
+        },
+        "potential_neg": {
           "type": "string"
         },
         "volitional": {
@@ -82,6 +94,12 @@
           "type": "string"
         },
         "causative": {
+          "type": "string"
+        },
+        "conditional": {
+          "type": "string"
+        },
+        "conditional_neg": {
           "type": "string"
         }
       }
@@ -108,13 +126,46 @@
         "negative_polite": {
           "type": "string"
         },
+        "neg_past": {
+          "type": "string"
+        },
+        "neg_past_polite": {
+          "type": "string"
+        },
         "te_form": {
+          "type": "string"
+        },
+        "neg_te": {
+          "type": "string"
+        },
+        "ing_form": {
+          "type": "string"
+        },
+        "tai_form": {
           "type": "string"
         },
         "potential": {
           "type": "string"
         },
+        "potential_neg": {
+          "type": "string"
+        },
         "volitional": {
+          "type": "string"
+        },
+        "imperative": {
+          "type": "string"
+        },
+        "passive": {
+          "type": "string"
+        },
+        "causative": {
+          "type": "string"
+        },
+        "conditional": {
+          "type": "string"
+        },
+        "conditional_neg": {
           "type": "string"
         }
       }
