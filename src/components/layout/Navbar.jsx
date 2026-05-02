@@ -47,11 +47,7 @@ export default function Navbar({ playerStats }) {
               alt="Lighthouse logo"
               className="h-9 w-auto object-contain rounded"
             />
-            <div className="hidden sm:block leading-tight">
-              <span className="font-latin font-bold text-foreground tracking-wide">LIGHTHOUSE</span>
-              <span className="font-jp text-primary font-bold ml-1">橋</span>
-              <div className="text-[9px] text-muted-foreground tracking-widest uppercase">Kioku Interactive</div>
-            </div>
+
           </Link>
 
           {/* Desktop Nav */}
