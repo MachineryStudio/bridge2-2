@@ -6,11 +6,12 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { motion } from 'framer-motion';
-import { Gamepad2, Grid3X3, Keyboard, HelpCircle, Mic } from 'lucide-react';
+import { Gamepad2, Grid3X3, Keyboard, HelpCircle, Mic, Headphones } from 'lucide-react';
 import MemoryMatchGame from '@/components/games/MemoryMatchGame';
 import TypingAttackGame from '@/components/games/TypingAttackGame';
 import ConjugationQuiz from '@/components/games/ConjugationQuiz';
 import PronunciationMic from '@/components/shared/PronunciationMic';
+import ListeningMode from '@/components/games/ListeningMode';
 import { initialVerbs } from '@/lib/gameData';
 
 const games = [
@@ -18,6 +19,7 @@ const games = [
   { id: 'typing', icon: Keyboard, titleKey: 'typingGame', color: 'text-blue-400', bg: 'bg-blue-500/10' },
   { id: 'quiz', icon: HelpCircle, titleKey: 'fillBlank', color: 'text-purple-400', bg: 'bg-purple-500/10' },
   { id: 'pronunciation', icon: Mic, titleKey: 'speak', color: 'text-orange-400', bg: 'bg-orange-500/10' },
+  { id: 'listening', icon: Headphones, titleKey: 'listening', color: 'text-pink-400', bg: 'bg-pink-500/10' },
 ];
 
 function PronunciationGame({ verbs }) {
@@ -112,6 +114,7 @@ export default function GameHub() {
           {activeGame === 'typing' && <TypingAttackGame verbs={verbs} onComplete={handleGameComplete} />}
           {activeGame === 'quiz' && <ConjugationQuiz verbs={verbs} onComplete={handleGameComplete} />}
           {activeGame === 'pronunciation' && <PronunciationGame verbs={verbs} />}
+          {activeGame === 'listening' && <ListeningMode verbs={verbs} onComplete={handleGameComplete} />}
         </Card>
       )}
     </div>
