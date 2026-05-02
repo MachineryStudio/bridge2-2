@@ -11,6 +11,7 @@ import Home from '@/pages/Home';
 import VerbStudy from '@/pages/VerbStudy';
 import GrammarStudy from '@/pages/GrammarStudy';
 import GameHub from '@/pages/GameHub';
+import TimedQuiz from '@/pages/TimedQuiz';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -42,6 +43,7 @@ const AuthenticatedApp = () => {
         <Route path="/verbs" element={<VerbStudy />} />
         <Route path="/grammar" element={<GrammarStudy />} />
         <Route path="/games" element={<GameHub />} />
+        <Route path="/quiz" element={<TimedQuiz />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>

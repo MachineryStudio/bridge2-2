@@ -30,6 +30,7 @@ export default function Navbar({ playerStats }) {
     { path: '/verbs', label: t('verbStudy') },
     { path: '/grammar', label: t('grammarStudy') },
     { path: '/games', label: t('gameHub') },
+    { path: '/quiz', label: 'Timed Quiz' },
   ];
 
   const isActive = (path) => location.pathname === path;
