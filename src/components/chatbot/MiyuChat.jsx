@@ -91,19 +91,63 @@ const WELCOME_MESSAGES = {
   es: (name) => name ? `¡Hola ${name}! Soy MIYU ♡ ¿Cómo puedo ayudarte?` : `¡Hola! Soy MIYU ♡ ¿Cómo puedo ayudarte?`,
 };
 
+// Priority female voice names per language
+const FEMALE_VOICE_PRIORITY = {
+  en: ['Samantha', 'Google UK English Female', 'Microsoft Zira', 'Victoria', 'Karen', 'Moira', 'Tessa', 'Fiona', 'Google US English'],
+  ja: ['Kyoko', 'O-ren', 'Google 日本語', 'Haruka', 'Microsoft Haruka'],
+  fr: ['Amelie', 'Thomas', 'Google français', 'Microsoft Julie', 'Marie'],
+  zh: ['Ting-Ting', 'Sin-ji', 'Google 普通话（中国大陆）', 'Microsoft Huihui', 'Mei-Jia'],
+  ko: ['Yuna', 'Google 한국의', 'Microsoft Heami'],
+  es: ['Paulina', 'Monica', 'Google español', 'Microsoft Laura', 'Microsoft Sabina'],
+};
+
+function getBestVoice(lang) {
+  const voices = window.speechSynthesis.getVoices();
+  const langCodes = VOICE_LANG_MAP[lang] || ['en-US'];
+  const priority = FEMALE_VOICE_PRIORITY[lang] || [];
+
+  // 1. Try priority female voices by name
+  for (const name of priority) {
+    const v = voices.find(v => v.name.includes(name) && langCodes.some(lc => v.lang.startsWith(lc)));
+    if (v) return v;
+  }
+  // 2. Try any voice with female/woman in name for the language
+  const femaleByName = voices.find(v =>
+    langCodes.some(lc => v.lang.startsWith(lc)) && /female|woman|girl/i.test(v.name)
+  );
+  if (femaleByName) return femaleByName;
+
+  // 3. Try any voice matching language
+  return voices.find(v => langCodes.some(lc => v.lang.startsWith(lc))) || null;
+}
+
 function speakText(text, lang) {
   if (!window.speechSynthesis) return;
   window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(text);
-  const langCodes = VOICE_LANG_MAP[lang] || ['en-US'];
-  const voices = window.speechSynthesis.getVoices();
-  const femaleVoice = voices.find(v => langCodes.some(lc => v.lang.startsWith(lc)) && /female|woman|girl|kyoko|haruka|zira|samantha/i.test(v.name))
-    || voices.find(v => langCodes.some(lc => v.lang.startsWith(lc)));
-  if (femaleVoice) utterance.voice = femaleVoice;
-  utterance.lang = langCodes[0];
-  utterance.pitch = lang === 'ja' ? 1.3 : 1.1;
-  utterance.rate = 0.95;
-  window.speechSynthesis.speak(utterance);
+
+  const trySpeak = () => {
+    const utterance = new SpeechSynthesisUtterance(text);
+    const langCodes = VOICE_LANG_MAP[lang] || ['en-US'];
+    const voice = getBestVoice(lang);
+    if (voice) utterance.voice = voice;
+    utterance.lang = langCodes[0];
+    // Tune pitch/rate per language for natural female sound
+    if (lang === 'ja') { utterance.pitch = 1.25; utterance.rate = 0.9; }
+    else if (lang === 'ko') { utterance.pitch = 1.2; utterance.rate = 0.92; }
+    else if (lang === 'zh') { utterance.pitch = 1.15; utterance.rate = 0.9; }
+    else { utterance.pitch = 1.1; utterance.rate = 0.93; }
+    window.speechSynthesis.speak(utterance);
+  };
+
+  // Voices may not be loaded yet — wait if needed
+  if (window.speechSynthesis.getVoices().length > 0) {
+    trySpeak();
+  } else {
+    window.speechSynthesis.onvoiceschanged = () => {
+      window.speechSynthesis.onvoiceschanged = null;
+      trySpeak();
+    };
+  }
 }
 
 export default function MiyuChat({ customerName, lang, onClose }) {
