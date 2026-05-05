@@ -5,12 +5,13 @@ import { useLang } from '@/lib/LanguageContext';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, BookOpen, Menu, Download, Tag, X } from 'lucide-react';
+import { Search, BookOpen, Menu, Download, Tag, PenLine, ChevronDown, ChevronUp } from 'lucide-react';
 import LevelBadge from '@/components/shared/LevelBadge';
 import SpeakButton from '@/components/shared/SpeakButton';
 import ConjugationDrawer from '@/components/verbs/ConjugationDrawer';
 import TagManagerModal from '@/components/verbs/TagManagerModal';
 import VerbTagAssigner from '@/components/verbs/VerbTagAssigner';
+import ConjugationPractice from '@/components/verbs/ConjugationPractice';
 import { verbData } from '@/lib/verbData';
 
 const LEVELS = ['all', 'N5', 'N4', 'N3', 'N2', 'N1'];
@@ -59,6 +60,7 @@ export default function VerbStudy() {
   const [tagFilter, setTagFilter] = useState(null); // tag id or null
   const [drawerVerb, setDrawerVerb] = useState(null);
   const [showTagManager, setShowTagManager] = useState(false);
+  const [showPractice, setShowPractice] = useState(false);
 
   const { data: verbs, isLoading } = useQuery({
     queryKey: ['verbs'],
@@ -108,6 +110,16 @@ export default function VerbStudy() {
           </div>
           <div className="flex items-center gap-2">
             <Button
+              variant={showPractice ? "default" : "outline"}
+              size="sm"
+              className={`gap-2 border-border/50 ${showPractice ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}
+              onClick={() => setShowPractice(p => !p)}
+            >
+              <PenLine className="w-4 h-4" />
+              Practice
+              {showPractice ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+            </Button>
+            <Button
               variant="outline"
               size="sm"
               className="gap-2 border-border/50 text-muted-foreground hover:text-foreground"
@@ -129,6 +141,20 @@ export default function VerbStudy() {
         </div>
         <p className="text-muted-foreground text-sm">{filtered.length} {t('totalVerbs').toLowerCase()}</p>
       </motion.div>
+
+      {/* Conjugation Practice Section */}
+      <AnimatePresence>
+        {showPractice && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="overflow-hidden mb-6"
+          >
+            <ConjugationPractice verbs={verbs} />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Search + Level filter */}
       <div className="flex flex-col sm:flex-row gap-3 mb-6">
