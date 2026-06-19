@@ -1,21 +1,62 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { speakJapanese } from '@/lib/speechUtils';
+import { base44 } from '@/api/base44Client';
 import { motion } from 'framer-motion';
+
+// Cache generated audio URLs so we don't regenerate (and re-spend credits) for the same text
+const audioCache = new Map();
 
 export default function SpeakButton({ text, size = 'sm', className = '' }) {
   const [speaking, setSpeaking] = useState(false);
+  const audioRef = useRef(null);
+
+  const stop = () => {
+    window.speechSynthesis?.cancel();
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current = null;
+    }
+    setSpeaking(false);
+  };
+
+  const playUrl = (url) => {
+    const audio = new Audio(url);
+    audioRef.current = audio;
+    audio.onended = () => setSpeaking(false);
+    audio.onerror = () => setSpeaking(false);
+    audio.play().catch(() => setSpeaking(false));
+  };
 
   const handleSpeak = async (e) => {
     e?.stopPropagation();
     if (speaking) {
-      window.speechSynthesis?.cancel();
-      setSpeaking(false);
+      stop();
       return;
     }
     setSpeaking(true);
-    await speakJapanese(text, () => setSpeaking(false));
+
+    // 1. Try the device's native Japanese voice (free, instant)
+    const usedNative = await speakJapanese(text, () => setSpeaking(false));
+    if (usedNative) return;
+
+    // 2. No native Japanese voice on this device → use server-generated native speech
+    if (audioCache.has(text)) {
+      playUrl(audioCache.get(text));
+      return;
+    }
+    try {
+      const { url } = await base44.integrations.Core.GenerateSpeech({
+        text,
+        voice: 'honey',
+        language_code: 'ja',
+      });
+      audioCache.set(text, url);
+      playUrl(url);
+    } catch {
+      setSpeaking(false);
+    }
   };
 
   return (

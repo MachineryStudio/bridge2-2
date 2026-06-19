@@ -92,11 +92,16 @@ function _speak(text, lang, onEnd) {
 }
 
 // ─── Japanese TTS (used by SpeakButton & conjugation views) ──────────────────
+// Returns true if a NATIVE Japanese voice was used, false if none is available
+// on the device (so the caller can fall back to server-generated speech).
 export async function speakJapanese(text, onEnd) {
-  if (!('speechSynthesis' in window)) return;
-  window.speechSynthesis.cancel();
+  if (!('speechSynthesis' in window)) { onEnd?.(); return false; }
   await loadVoices();
+  const voice = pickVoice('ja');
+  if (!voice) { onEnd?.(); return false; }
+  window.speechSynthesis.cancel();
   _speak(text, 'ja', onEnd);
+  return true;
 }
 
 // ─── Mixed-language TTS (used by MiyuChat) ────────────────────────────────────
