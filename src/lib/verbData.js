@@ -341,4 +341,323 @@ export const verbData = [
     forms_romaji:{present:"motomeru",present_polite:"motomemasu",past:"motometa",past_polite:"motomemashita",negative:"motomenai",negative_polite:"motomemasen",neg_past:"motomenakatta",neg_past_polite:"motomemasen deshita",te_form:"motomete",neg_te:"motomenakute",ing_form:"motomete iru",tai_form:"motometai",potential:"motomerareru",potential_neg:"motomerarenai",volitional:"motomeyou",passive:"motomerareru",causative:"motomesaseru",imperative:"motomero",conditional:"motomereba",conditional_neg:"motomenakereba"},
     example_sentence:"説明を求めます。",example_sentence_en:"I seek an explanation."
   },
+  // ===== ADDITIONAL VERBS (from japaneseverbconjugator.com) =====
+  {
+    dictionary:"答える",hiragana:"こたえる",romaji:"kotaeru",meaning_en:"to answer",group:"ichidan",level:"N4",
+    forms:{present:"答える",present_polite:"答えます",past:"答えた",past_polite:"答えました",negative:"答えない",negative_polite:"答えません",neg_past:"答えなかった",neg_past_polite:"答えませんでした",te_form:"答えて",neg_te:"答えなくて",ing_form:"答えている",tai_form:"答えたい",potential:"答えられる",potential_neg:"答えられない",volitional:"答えよう",passive:"答えられる",causative:"答えさせる",imperative:"答えろ",conditional:"答えれば",conditional_neg:"答えなければ"},
+    forms_romaji:{present:"kotaeru",present_polite:"kotaemasu",past:"kotaeta",past_polite:"kotaemashita",negative:"kotaenai",negative_polite:"kotaemasen",neg_past:"kotaenakatta",neg_past_polite:"kotaemasen deshita",te_form:"kotaete",neg_te:"kotaenakute",ing_form:"kotaete iru",tai_form:"kotaetai",potential:"kotaerareru",potential_neg:"kotaerarenai",volitional:"kotaeyou",passive:"kotaerareru",causative:"kotaesaseru",imperative:"kotaero",conditional:"kotaereba",conditional_neg:"kotaenakereba"},
+    example_sentence:"質問に答えてください。",example_sentence_en:"Please answer the question."
+  },
+  {
+    dictionary:"現れる",hiragana:"あらわれる",romaji:"arawareru",meaning_en:"to appear / show up",group:"ichidan",level:"N3",
+    forms:{present:"現れる",present_polite:"現れます",past:"現れた",past_polite:"現れました",negative:"現れない",negative_polite:"現れません",neg_past:"現れなかった",neg_past_polite:"現れませんでした",te_form:"現れて",neg_te:"現れなくて",ing_form:"現れている",tai_form:"現れたい",potential:"現れられる",potential_neg:"現れられない",volitional:"現れよう",passive:"現れられる",causative:"現れさせる",imperative:"現れろ",conditional:"現れれば",conditional_neg:"現れなければ"},
+    forms_romaji:{present:"arawareru",present_polite:"arawaremasu",past:"arawareta",past_polite:"arawaremashita",negative:"arawarenai",negative_polite:"arawaremasen",neg_past:"arawarenakatta",neg_past_polite:"arawaremasen deshita",te_form:"arawarete",neg_te:"arawarenakute",ing_form:"arawarete iru",tai_form:"arawaretai",potential:"arawarerareru",potential_neg:"arawarerarenai",volitional:"arawareyou",passive:"arawarerareru",causative:"arawaresaseru",imperative:"arawarero",conditional:"arawarereba",conditional_neg:"arawarenakereba"},
+    example_sentence:"太陽が現れました。",example_sentence_en:"The sun appeared."
+  },
+  {
+    dictionary:"着く",hiragana:"つく",romaji:"tsuku",meaning_en:"to arrive",group:"godan",level:"N4",
+    forms:{present:"着く",present_polite:"着きます",past:"着いた",past_polite:"着きました",negative:"着かない",negative_polite:"着きません",neg_past:"着かなかった",neg_past_polite:"着きませんでした",te_form:"着いて",neg_te:"着かなくて",ing_form:"着いている",tai_form:"着きたい",potential:"着ける",potential_neg:"着けない",volitional:"着こう",passive:"着かれる",causative:"着かせる",imperative:"着け",conditional:"着けば",conditional_neg:"着かなければ"},
+    forms_romaji:{present:"tsuku",present_polite:"tsukimasu",past:"tsuita",past_polite:"tsukimashita",negative:"tsukanai",negative_polite:"tsukimasen",neg_past:"tsukanakatta",neg_past_polite:"tsukimasen deshita",te_form:"tsuite",neg_te:"tsukanakute",ing_form:"tsuite iru",tai_form:"tsukitai",potential:"tsukeru",potential_neg:"tsukenai",volitional:"tsukou",passive:"tsukareru",causative:"tsukaseru",imperative:"tsuke",conditional:"tsukeba",conditional_neg:"tsukanakereba"},
+    example_sentence:"駅に着きました。",example_sentence_en:"I arrived at the station."
+  },
+  {
+    dictionary:"避ける",hiragana:"さける",romaji:"sakeru",meaning_en:"to avoid / dodge",group:"ichidan",level:"N3",
+    forms:{present:"避ける",present_polite:"避けます",past:"避けた",past_polite:"避けました",negative:"避けない",negative_polite:"避けません",neg_past:"避けなかった",neg_past_polite:"避けませんでした",te_form:"避けて",neg_te:"避けなくて",ing_form:"避けている",tai_form:"避けたい",potential:"避けられる",potential_neg:"避けられない",volitional:"避けよう",passive:"避けられる",causative:"避けさせる",imperative:"避けろ",conditional:"避ければ",conditional_neg:"避けなければ"},
+    forms_romaji:{present:"sakeru",present_polite:"sakemasu",past:"saketa",past_polite:"sakemashita",negative:"sakenai",negative_polite:"sakemasen",neg_past:"sakenakatta",neg_past_polite:"sakemasen deshita",te_form:"sakete",neg_te:"sakenakute",ing_form:"sakete iru",tai_form:"saketai",potential:"sakerareru",potential_neg:"sakerarenai",volitional:"sakeyou",passive:"sakerareru",causative:"sakesaseru",imperative:"sakero",conditional:"sakereba",conditional_neg:"sakenakereba"},
+    example_sentence:"問題を避けます。",example_sentence_en:"I avoid the problem."
+  },
+  {
+    dictionary:"浴びる",hiragana:"あびる",romaji:"abiru",meaning_en:"to bathe / take a shower",group:"ichidan",level:"N4",
+    forms:{present:"浴びる",present_polite:"浴びます",past:"浴びた",past_polite:"浴びました",negative:"浴びない",negative_polite:"浴びません",neg_past:"浴びなかった",neg_past_polite:"浴びませんでした",te_form:"浴びて",neg_te:"浴びなくて",ing_form:"浴びている",tai_form:"浴びたい",potential:"浴びられる",potential_neg:"浴びられない",volitional:"浴びよう",passive:"浴びられる",causative:"浴びさせる",imperative:"浴びろ",conditional:"浴びれば",conditional_neg:"浴びなければ"},
+    forms_romaji:{present:"abiru",present_polite:"abimasu",past:"abita",past_polite:"abimashita",negative:"abinai",negative_polite:"abimasen",neg_past:"abinakatta",neg_past_polite:"abimasen deshita",te_form:"abite",neg_te:"abinakute",ing_form:"abite iru",tai_form:"abitai",potential:"abirareru",potential_neg:"abirarenai",volitional:"abiyou",passive:"abirareru",causative:"abisaseru",imperative:"abiro",conditional:"abireba",conditional_neg:"abinakereba"},
+    example_sentence:"シャワーを浴びます。",example_sentence_en:"I take a shower."
+  },
+  {
+    dictionary:"生まれる",hiragana:"うまれる",romaji:"umareru",meaning_en:"to be born",group:"ichidan",level:"N4",
+    forms:{present:"生まれる",present_polite:"生まれます",past:"生まれた",past_polite:"生まれました",negative:"生まれない",negative_polite:"生まれません",neg_past:"生まれなかった",neg_past_polite:"生まれませんでした",te_form:"生まれて",neg_te:"生まれなくて",ing_form:"生まれている",tai_form:"生まれたい",potential:"生まれられる",potential_neg:"生まれられない",volitional:"生まれよう",passive:"生まれられる",causative:"生まれさせる",imperative:"生まれろ",conditional:"生まれれば",conditional_neg:"生まれなければ"},
+    forms_romaji:{present:"umareru",present_polite:"umaremasu",past:"umareta",past_polite:"umaremashita",negative:"umarenai",negative_polite:"umaremasen",neg_past:"umarenakatta",neg_past_polite:"umaremasen deshita",te_form:"umarete",neg_te:"umarenakute",ing_form:"umarete iru",tai_form:"umaretai",potential:"umarerareru",potential_neg:"umarerarenai",volitional:"umareyou",passive:"umarerareru",causative:"umaresaseru",imperative:"umarero",conditional:"umarerebа",conditional_neg:"umarenakereba"},
+    example_sentence:"東京で生まれました。",example_sentence_en:"I was born in Tokyo."
+  },
+  {
+    dictionary:"負ける",hiragana:"まける",romaji:"makeru",meaning_en:"to lose / be defeated",group:"ichidan",level:"N4",
+    forms:{present:"負ける",present_polite:"負けます",past:"負けた",past_polite:"負けました",negative:"負けない",negative_polite:"負けません",neg_past:"負けなかった",neg_past_polite:"負けませんでした",te_form:"負けて",neg_te:"負けなくて",ing_form:"負けている",tai_form:"負けたい",potential:"負けられる",potential_neg:"負けられない",volitional:"負けよう",passive:"負けられる",causative:"負けさせる",imperative:"負けろ",conditional:"負ければ",conditional_neg:"負けなければ"},
+    forms_romaji:{present:"makeru",present_polite:"makemasu",past:"maketa",past_polite:"makemashita",negative:"makenai",negative_polite:"makemasen",neg_past:"makenakatta",neg_past_polite:"makemasen deshita",te_form:"makete",neg_te:"makenakute",ing_form:"makete iru",tai_form:"maketai",potential:"makerareru",potential_neg:"makerarenai",volitional:"makeyou",passive:"makerareru",causative:"makesaseru",imperative:"makero",conditional:"makereba",conditional_neg:"makenakereba"},
+    example_sentence:"試合に負けました。",example_sentence_en:"I lost the match."
+  },
+  {
+    dictionary:"勝つ",hiragana:"かつ",romaji:"katsu",meaning_en:"to win",group:"godan",level:"N4",
+    forms:{present:"勝つ",present_polite:"勝ちます",past:"勝った",past_polite:"勝ちました",negative:"勝たない",negative_polite:"勝ちません",neg_past:"勝たなかった",neg_past_polite:"勝ちませんでした",te_form:"勝って",neg_te:"勝たなくて",ing_form:"勝っている",tai_form:"勝ちたい",potential:"勝てる",potential_neg:"勝てない",volitional:"勝とう",passive:"勝たれる",causative:"勝たせる",imperative:"勝て",conditional:"勝てば",conditional_neg:"勝たなければ"},
+    forms_romaji:{present:"katsu",present_polite:"kachimasu",past:"katta",past_polite:"kachimashita",negative:"katanai",negative_polite:"kachimasen",neg_past:"katanakatta",neg_past_polite:"kachimasen deshita",te_form:"katte",neg_te:"katanakute",ing_form:"katte iru",tai_form:"kachitai",potential:"kateru",potential_neg:"katenai",volitional:"katou",passive:"katareru",causative:"kataseru",imperative:"kate",conditional:"kateba",conditional_neg:"katanakereba"},
+    example_sentence:"試合に勝ちました。",example_sentence_en:"I won the match."
+  },
+  {
+    dictionary:"焼く",hiragana:"やく",romaji:"yaku",meaning_en:"to bake / grill",group:"godan",level:"N4",
+    forms:{present:"焼く",present_polite:"焼きます",past:"焼いた",past_polite:"焼きました",negative:"焼かない",negative_polite:"焼きません",neg_past:"焼かなかった",neg_past_polite:"焼きませんでした",te_form:"焼いて",neg_te:"焼かなくて",ing_form:"焼いている",tai_form:"焼きたい",potential:"焼ける",potential_neg:"焼けない",volitional:"焼こう",passive:"焼かれる",causative:"焼かせる",imperative:"焼け",conditional:"焼けば",conditional_neg:"焼かなければ"},
+    forms_romaji:{present:"yaku",present_polite:"yakimasu",past:"yaita",past_polite:"yakimashita",negative:"yakanai",negative_polite:"yakimasen",neg_past:"yakanakatta",neg_past_polite:"yakimasen deshita",te_form:"yaite",neg_te:"yakanakute",ing_form:"yaite iru",tai_form:"yakitai",potential:"yakeru",potential_neg:"yakenai",volitional:"yakou",passive:"yakareru",causative:"yakaseru",imperative:"yake",conditional:"yakeba",conditional_neg:"yakanakereba"},
+    example_sentence:"パンを焼きます。",example_sentence_en:"I bake bread."
+  },
+  {
+    dictionary:"切る",hiragana:"きる",romaji:"kiru_cut",meaning_en:"to cut",group:"godan",level:"N4",
+    forms:{present:"切る",present_polite:"切ります",past:"切った",past_polite:"切りました",negative:"切らない",negative_polite:"切りません",neg_past:"切らなかった",neg_past_polite:"切りませんでした",te_form:"切って",neg_te:"切らなくて",ing_form:"切っている",tai_form:"切りたい",potential:"切れる",potential_neg:"切れない",volitional:"切ろう",passive:"切られる",causative:"切らせる",imperative:"切れ",conditional:"切れば",conditional_neg:"切らなければ"},
+    forms_romaji:{present:"kiru",present_polite:"kirimasu",past:"kitta",past_polite:"kirimashita",negative:"kiranai",negative_polite:"kirimasen",neg_past:"kiranakatta",neg_past_polite:"kirimasen deshita",te_form:"kitte",neg_te:"kiranakute",ing_form:"kitte iru",tai_form:"kiritai",potential:"kireru",potential_neg:"kirenai",volitional:"kirou",passive:"kirareru",causative:"kiraseru",imperative:"kire",conditional:"kireba",conditional_neg:"kiranakereba"},
+    example_sentence:"野菜を切ります。",example_sentence_en:"I cut vegetables."
+  },
+  {
+    dictionary:"押す",hiragana:"おす",romaji:"osu",meaning_en:"to push / press",group:"godan",level:"N4",
+    forms:{present:"押す",present_polite:"押します",past:"押した",past_polite:"押しました",negative:"押さない",negative_polite:"押しません",neg_past:"押さなかった",neg_past_polite:"押しませんでした",te_form:"押して",neg_te:"押さなくて",ing_form:"押している",tai_form:"押したい",potential:"押せる",potential_neg:"押せない",volitional:"押そう",passive:"押される",causative:"押させる",imperative:"押せ",conditional:"押せば",conditional_neg:"押さなければ"},
+    forms_romaji:{present:"osu",present_polite:"oshimasu",past:"oshita",past_polite:"oshimashita",negative:"osanai",negative_polite:"oshimasen",neg_past:"osanakatta",neg_past_polite:"oshimasen deshita",te_form:"oshite",neg_te:"osanakute",ing_form:"oshite iru",tai_form:"oshitai",potential:"oseru",potential_neg:"osenai",volitional:"osou",passive:"osareru",causative:"osaseru",imperative:"ose",conditional:"oseba",conditional_neg:"osanakereba"},
+    example_sentence:"ボタンを押してください。",example_sentence_en:"Please press the button."
+  },
+  {
+    dictionary:"引く",hiragana:"ひく",romaji:"hiku",meaning_en:"to pull / draw",group:"godan",level:"N4",
+    forms:{present:"引く",present_polite:"引きます",past:"引いた",past_polite:"引きました",negative:"引かない",negative_polite:"引きません",neg_past:"引かなかった",neg_past_polite:"引きませんでした",te_form:"引いて",neg_te:"引かなくて",ing_form:"引いている",tai_form:"引きたい",potential:"引ける",potential_neg:"引けない",volitional:"引こう",passive:"引かれる",causative:"引かせる",imperative:"引け",conditional:"引けば",conditional_neg:"引かなければ"},
+    forms_romaji:{present:"hiku",present_polite:"hikimasu",past:"hiita",past_polite:"hikimashita",negative:"hikanai",negative_polite:"hikimasen",neg_past:"hikanakatta",neg_past_polite:"hikimasen deshita",te_form:"hiite",neg_te:"hikanakute",ing_form:"hiite iru",tai_form:"hikitai",potential:"hikeru",potential_neg:"hikenai",volitional:"hikou",passive:"hikareru",causative:"hikaseru",imperative:"hike",conditional:"hikeba",conditional_neg:"hikanakereba"},
+    example_sentence:"ドアを引いてください。",example_sentence_en:"Please pull the door."
+  },
+  {
+    dictionary:"投げる",hiragana:"なげる",romaji:"nageru",meaning_en:"to throw",group:"ichidan",level:"N4",
+    forms:{present:"投げる",present_polite:"投げます",past:"投げた",past_polite:"投げました",negative:"投げない",negative_polite:"投げません",neg_past:"投げなかった",neg_past_polite:"投げませんでした",te_form:"投げて",neg_te:"投げなくて",ing_form:"投げている",tai_form:"投げたい",potential:"投げられる",potential_neg:"投げられない",volitional:"投げよう",passive:"投げられる",causative:"投げさせる",imperative:"投げろ",conditional:"投げれば",conditional_neg:"投げなければ"},
+    forms_romaji:{present:"nageru",present_polite:"nagemasu",past:"nageta",past_polite:"nagemashita",negative:"nagenai",negative_polite:"nagemasen",neg_past:"nagenakatta",neg_past_polite:"nagemasen deshita",te_form:"nagete",neg_te:"nagenakute",ing_form:"nagete iru",tai_form:"nagetai",potential:"nagerareru",potential_neg:"nagerarenai",volitional:"nageyou",passive:"nagerareru",causative:"nagesaseru",imperative:"nagero",conditional:"nagereba",conditional_neg:"nagenakereba"},
+    example_sentence:"ボールを投げます。",example_sentence_en:"I throw a ball."
+  },
+  {
+    dictionary:"捕まえる",hiragana:"つかまえる",romaji:"tsukamaeru",meaning_en:"to catch / grab",group:"ichidan",level:"N3",
+    forms:{present:"捕まえる",present_polite:"捕まえます",past:"捕まえた",past_polite:"捕まえました",negative:"捕まえない",negative_polite:"捕まえません",neg_past:"捕まえなかった",neg_past_polite:"捕まえませんでした",te_form:"捕まえて",neg_te:"捕まえなくて",ing_form:"捕まえている",tai_form:"捕まえたい",potential:"捕まえられる",potential_neg:"捕まえられない",volitional:"捕まえよう",passive:"捕まえられる",causative:"捕まえさせる",imperative:"捕まえろ",conditional:"捕まえれば",conditional_neg:"捕まえなければ"},
+    forms_romaji:{present:"tsukamaeru",present_polite:"tsukamaemasu",past:"tsukamaeta",past_polite:"tsukamaemashita",negative:"tsukamaemai",negative_polite:"tsukamaemasen",neg_past:"tsukamaenakatta",neg_past_polite:"tsukamaemasen deshita",te_form:"tsukamaete",neg_te:"tsukamaenakute",ing_form:"tsukamaete iru",tai_form:"tsukamaemai",potential:"tsukamaerareru",potential_neg:"tsukamaerarenai",volitional:"tsukamaeyou",passive:"tsukamaerareru",causative:"tsukamaesaseru",imperative:"tsukamaero",conditional:"tsukamaerebа",conditional_neg:"tsukamaenakereba"},
+    example_sentence:"魚を捕まえます。",example_sentence_en:"I catch a fish."
+  },
+  {
+    dictionary:"開ける",hiragana:"あける",romaji:"akeru",meaning_en:"to open",group:"ichidan",level:"N5",
+    forms:{present:"開ける",present_polite:"開けます",past:"開けた",past_polite:"開けました",negative:"開けない",negative_polite:"開けません",neg_past:"開けなかった",neg_past_polite:"開けませんでした",te_form:"開けて",neg_te:"開けなくて",ing_form:"開けている",tai_form:"開けたい",potential:"開けられる",potential_neg:"開けられない",volitional:"開けよう",passive:"開けられる",causative:"開けさせる",imperative:"開けろ",conditional:"開ければ",conditional_neg:"開けなければ"},
+    forms_romaji:{present:"akeru",present_polite:"akemasu",past:"aketa",past_polite:"akemashita",negative:"akenai",negative_polite:"akemasen",neg_past:"akenakatta",neg_past_polite:"akemasen deshita",te_form:"akete",neg_te:"akenakute",ing_form:"akete iru",tai_form:"aketai",potential:"akerareru",potential_neg:"akerarenai",volitional:"akeyou",passive:"akerareru",causative:"akesaseru",imperative:"akero",conditional:"akereba",conditional_neg:"akenakereba"},
+    example_sentence:"窓を開けてください。",example_sentence_en:"Please open the window."
+  },
+  {
+    dictionary:"閉める",hiragana:"しめる",romaji:"shimeru",meaning_en:"to close / shut",group:"ichidan",level:"N5",
+    forms:{present:"閉める",present_polite:"閉めます",past:"閉めた",past_polite:"閉めました",negative:"閉めない",negative_polite:"閉めません",neg_past:"閉めなかった",neg_past_polite:"閉めませんでした",te_form:"閉めて",neg_te:"閉めなくて",ing_form:"閉めている",tai_form:"閉めたい",potential:"閉められる",potential_neg:"閉められない",volitional:"閉めよう",passive:"閉められる",causative:"閉めさせる",imperative:"閉めろ",conditional:"閉めれば",conditional_neg:"閉めなければ"},
+    forms_romaji:{present:"shimeru",present_polite:"shimemasu",past:"shimeta",past_polite:"shimemashita",negative:"shimensai",negative_polite:"shimemasen",neg_past:"shimenakatta",neg_past_polite:"shimemasen deshita",te_form:"shimete",neg_te:"shimenakute",ing_form:"shimete iru",tai_form:"shimetai",potential:"shimerareru",potential_neg:"shimerarenai",volitional:"shimeyou",passive:"shimerareru",causative:"shimesaseru",imperative:"shimero",conditional:"shimereba",conditional_neg:"shimenakereba"},
+    example_sentence:"ドアを閉めてください。",example_sentence_en:"Please close the door."
+  },
+  {
+    dictionary:"送る",hiragana:"おくる",romaji:"okuru",meaning_en:"to send",group:"godan",level:"N4",
+    forms:{present:"送る",present_polite:"送ります",past:"送った",past_polite:"送りました",negative:"送らない",negative_polite:"送りません",neg_past:"送らなかった",neg_past_polite:"送りませんでした",te_form:"送って",neg_te:"送らなくて",ing_form:"送っている",tai_form:"送りたい",potential:"送れる",potential_neg:"送れない",volitional:"送ろう",passive:"送られる",causative:"送らせる",imperative:"送れ",conditional:"送れば",conditional_neg:"送らなければ"},
+    forms_romaji:{present:"okuru",present_polite:"okurimasu",past:"okutta",past_polite:"okurimashita",negative:"okuranai",negative_polite:"okurimasen",neg_past:"okuranakatta",neg_past_polite:"okurimasen deshita",te_form:"okutte",neg_te:"okuranakute",ing_form:"okutte iru",tai_form:"okuritai",potential:"okureru",potential_neg:"okurenai",volitional:"okurou",passive:"okurareru",causative:"okuraseru",imperative:"okure",conditional:"okureba",conditional_neg:"okuranakereba"},
+    example_sentence:"メールを送ります。",example_sentence_en:"I send an email."
+  },
+  {
+    dictionary:"受け取る",hiragana:"うけとる",romaji:"uketoru",meaning_en:"to receive / accept",group:"godan",level:"N3",
+    forms:{present:"受け取る",present_polite:"受け取ります",past:"受け取った",past_polite:"受け取りました",negative:"受け取らない",negative_polite:"受け取りません",neg_past:"受け取らなかった",neg_past_polite:"受け取りませんでした",te_form:"受け取って",neg_te:"受け取らなくて",ing_form:"受け取っている",tai_form:"受け取りたい",potential:"受け取れる",potential_neg:"受け取れない",volitional:"受け取ろう",passive:"受け取られる",causative:"受け取らせる",imperative:"受け取れ",conditional:"受け取れば",conditional_neg:"受け取らなければ"},
+    forms_romaji:{present:"uketoru",present_polite:"uketorimasu",past:"uketotta",past_polite:"uketorimashita",negative:"uketoranai",negative_polite:"uketorimasen",neg_past:"uketoranakatta",neg_past_polite:"uketorimasen deshita",te_form:"uketotte",neg_te:"uketoranakute",ing_form:"uketotte iru",tai_form:"uketoritai",potential:"uketoreru",potential_neg:"uketorenai",volitional:"uketorou",passive:"uketorareru",causative:"uketoraseru",imperative:"uketore",conditional:"uketoreba",conditional_neg:"uketoranakereba"},
+    example_sentence:"荷物を受け取ります。",example_sentence_en:"I receive the package."
+  },
+  {
+    dictionary:"呼ぶ",hiragana:"よぶ",romaji:"yobu",meaning_en:"to call / invite",group:"godan",level:"N4",
+    forms:{present:"呼ぶ",present_polite:"呼びます",past:"呼んだ",past_polite:"呼びました",negative:"呼ばない",negative_polite:"呼びません",neg_past:"呼ばなかった",neg_past_polite:"呼びませんでした",te_form:"呼んで",neg_te:"呼ばなくて",ing_form:"呼んでいる",tai_form:"呼びたい",potential:"呼べる",potential_neg:"呼べない",volitional:"呼ぼう",passive:"呼ばれる",causative:"呼ばせる",imperative:"呼べ",conditional:"呼べば",conditional_neg:"呼ばなければ"},
+    forms_romaji:{present:"yobu",present_polite:"yobimasu",past:"yonda",past_polite:"yobimashita",negative:"yobanai",negative_polite:"yobimasen",neg_past:"yobanakatta",neg_past_polite:"yobimasen deshita",te_form:"yonde",neg_te:"yobanakute",ing_form:"yonde iru",tai_form:"yobitai",potential:"yoberu",potential_neg:"yobenai",volitional:"yobou",passive:"yobareru",causative:"yobaseru",imperative:"yobe",conditional:"yobeba",conditional_neg:"yobanakereba"},
+    example_sentence:"名前を呼ばれました。",example_sentence_en:"My name was called."
+  },
+  {
+    dictionary:"笑う",hiragana:"わらう",romaji:"warau",meaning_en:"to laugh / smile",group:"godan",level:"N4",
+    forms:{present:"笑う",present_polite:"笑います",past:"笑った",past_polite:"笑いました",negative:"笑わない",negative_polite:"笑いません",neg_past:"笑わなかった",neg_past_polite:"笑いませんでした",te_form:"笑って",neg_te:"笑わなくて",ing_form:"笑っている",tai_form:"笑いたい",potential:"笑える",potential_neg:"笑えない",volitional:"笑おう",passive:"笑われる",causative:"笑わせる",imperative:"笑え",conditional:"笑えば",conditional_neg:"笑わなければ"},
+    forms_romaji:{present:"warau",present_polite:"waraimasu",past:"waratta",past_polite:"waraimashita",negative:"warawanai",negative_polite:"waraimasen",neg_past:"warawanakatta",neg_past_polite:"waraimasen deshita",te_form:"waratte",neg_te:"warawanakute",ing_form:"waratte iru",tai_form:"waraitai",potential:"waraeru",potential_neg:"waraenai",volitional:"waraou",passive:"warawareru",causative:"warawaseru",imperative:"warae",conditional:"waraeba",conditional_neg:"warawanakereba"},
+    example_sentence:"面白くて笑いました。",example_sentence_en:"It was funny so I laughed."
+  },
+  {
+    dictionary:"泣く",hiragana:"なく",romaji:"naku",meaning_en:"to cry / weep",group:"godan",level:"N4",
+    forms:{present:"泣く",present_polite:"泣きます",past:"泣いた",past_polite:"泣きました",negative:"泣かない",negative_polite:"泣きません",neg_past:"泣かなかった",neg_past_polite:"泣きませんでした",te_form:"泣いて",neg_te:"泣かなくて",ing_form:"泣いている",tai_form:"泣きたい",potential:"泣ける",potential_neg:"泣けない",volitional:"泣こう",passive:"泣かれる",causative:"泣かせる",imperative:"泣け",conditional:"泣けば",conditional_neg:"泣かなければ"},
+    forms_romaji:{present:"naku",present_polite:"nakimasu",past:"naita",past_polite:"nakimashita",negative:"nakanai",negative_polite:"nakimasen",neg_past:"nakanakatta",neg_past_polite:"nakimasen deshita",te_form:"naite",neg_te:"nakanakute",ing_form:"naite iru",tai_form:"nakitai",potential:"nakeru",potential_neg:"nakenai",volitional:"nakou",passive:"nakareru",causative:"nakaseru",imperative:"nake",conditional:"nakeba",conditional_neg:"nakanakereba"},
+    example_sentence:"悲しくて泣きました。",example_sentence_en:"I was sad and cried."
+  },
+  {
+    dictionary:"歌う",hiragana:"うたう",romaji:"utau",meaning_en:"to sing",group:"godan",level:"N4",
+    forms:{present:"歌う",present_polite:"歌います",past:"歌った",past_polite:"歌いました",negative:"歌わない",negative_polite:"歌いません",neg_past:"歌わなかった",neg_past_polite:"歌いませんでした",te_form:"歌って",neg_te:"歌わなくて",ing_form:"歌っている",tai_form:"歌いたい",potential:"歌える",potential_neg:"歌えない",volitional:"歌おう",passive:"歌われる",causative:"歌わせる",imperative:"歌え",conditional:"歌えば",conditional_neg:"歌わなければ"},
+    forms_romaji:{present:"utau",present_polite:"utaimasu",past:"utatta",past_polite:"utaimashita",negative:"utawanai",negative_polite:"utaimasen",neg_past:"utawanakatta",neg_past_polite:"utaimasen deshita",te_form:"utatte",neg_te:"utawanakute",ing_form:"utatte iru",tai_form:"utaitai",potential:"utaeru",potential_neg:"utaenai",volitional:"utaou",passive:"utawareru",causative:"utawaseru",imperative:"utae",conditional:"utaeba",conditional_neg:"utawanakereba"},
+    example_sentence:"カラオケで歌います。",example_sentence_en:"I sing at karaoke."
+  },
+  {
+    dictionary:"踊る",hiragana:"おどる",romaji:"odoru",meaning_en:"to dance",group:"godan",level:"N4",
+    forms:{present:"踊る",present_polite:"踊ります",past:"踊った",past_polite:"踊りました",negative:"踊らない",negative_polite:"踊りません",neg_past:"踊らなかった",neg_past_polite:"踊りませんでした",te_form:"踊って",neg_te:"踊らなくて",ing_form:"踊っている",tai_form:"踊りたい",potential:"踊れる",potential_neg:"踊れない",volitional:"踊ろう",passive:"踊られる",causative:"踊らせる",imperative:"踊れ",conditional:"踊れば",conditional_neg:"踊らなければ"},
+    forms_romaji:{present:"odoru",present_polite:"odorimasu",past:"odotta",past_polite:"odorimashita",negative:"odoranai",negative_polite:"odorimasen",neg_past:"odoranakatta",neg_past_polite:"odorimasen deshita",te_form:"odotte",neg_te:"odoranakute",ing_form:"odotte iru",tai_form:"odoritai",potential:"odoreru",potential_neg:"odorenai",volitional:"odorou",passive:"odorareru",causative:"odoraseru",imperative:"odore",conditional:"odoreba",conditional_neg:"odoranakereba"},
+    example_sentence:"パーティーで踊ります。",example_sentence_en:"I dance at the party."
+  },
+  {
+    dictionary:"弾く",hiragana:"ひく",romaji:"hiku_play",meaning_en:"to play (instrument)",group:"godan",level:"N4",
+    forms:{present:"弾く",present_polite:"弾きます",past:"弾いた",past_polite:"弾きました",negative:"弾かない",negative_polite:"弾きません",neg_past:"弾かなかった",neg_past_polite:"弾きませんでした",te_form:"弾いて",neg_te:"弾かなくて",ing_form:"弾いている",tai_form:"弾きたい",potential:"弾ける",potential_neg:"弾けない",volitional:"弾こう",passive:"弾かれる",causative:"弾かせる",imperative:"弾け",conditional:"弾けば",conditional_neg:"弾かなければ"},
+    forms_romaji:{present:"hiku",present_polite:"hikimasu",past:"hiita",past_polite:"hikimashita",negative:"hikanai",negative_polite:"hikimasen",neg_past:"hikanakatta",neg_past_polite:"hikimasen deshita",te_form:"hiite",neg_te:"hikanakute",ing_form:"hiite iru",tai_form:"hikitai",potential:"hikeru",potential_neg:"hikenai",volitional:"hikou",passive:"hikareru",causative:"hikaseru",imperative:"hike",conditional:"hikeba",conditional_neg:"hikanakereba"},
+    example_sentence:"ピアノを弾きます。",example_sentence_en:"I play the piano."
+  },
+  {
+    dictionary:"探す",hiragana:"さがす",romaji:"sagasu",meaning_en:"to search / look for",group:"godan",level:"N4",
+    forms:{present:"探す",present_polite:"探します",past:"探した",past_polite:"探しました",negative:"探さない",negative_polite:"探しません",neg_past:"探さなかった",neg_past_polite:"探しませんでした",te_form:"探して",neg_te:"探さなくて",ing_form:"探している",tai_form:"探したい",potential:"探せる",potential_neg:"探せない",volitional:"探そう",passive:"探される",causative:"探させる",imperative:"探せ",conditional:"探せば",conditional_neg:"探さなければ"},
+    forms_romaji:{present:"sagasu",present_polite:"sagashimasu",past:"sagashita",past_polite:"sagashimashita",negative:"sagasanai",negative_polite:"sagashimasen",neg_past:"sagasanakatta",neg_past_polite:"sagashimasen deshita",te_form:"sagashite",neg_te:"sagasanakute",ing_form:"sagashite iru",tai_form:"sagashitai",potential:"sagaseru",potential_neg:"sagasenai",volitional:"sagasou",passive:"sagasareru",causative:"sagasaseru",imperative:"sagase",conditional:"sagaseba",conditional_neg:"sagasanakereba"},
+    example_sentence:"鍵を探しています。",example_sentence_en:"I'm looking for my key."
+  },
+  {
+    dictionary:"見つける",hiragana:"みつける",romaji:"mitsukeru",meaning_en:"to find",group:"ichidan",level:"N4",
+    forms:{present:"見つける",present_polite:"見つけます",past:"見つけた",past_polite:"見つけました",negative:"見つけない",negative_polite:"見つけません",neg_past:"見つけなかった",neg_past_polite:"見つけませんでした",te_form:"見つけて",neg_te:"見つけなくて",ing_form:"見つけている",tai_form:"見つけたい",potential:"見つけられる",potential_neg:"見つけられない",volitional:"見つけよう",passive:"見つけられる",causative:"見つけさせる",imperative:"見つけろ",conditional:"見つければ",conditional_neg:"見つけなければ"},
+    forms_romaji:{present:"mitsukeru",present_polite:"mitsukemasu",past:"mitsuketa",past_polite:"mitsukemashita",negative:"mitsukenai",negative_polite:"mitsukemasen",neg_past:"mitsukenakatta",neg_past_polite:"mitsukemasen deshita",te_form:"mitsukete",neg_te:"mitsukenakute",ing_form:"mitsukete iru",tai_form:"mitsuketai",potential:"mitsukerareru",potential_neg:"mitsukerarenai",volitional:"mitsukeyou",passive:"mitsukerareru",causative:"mitsukesaseru",imperative:"mitsukero",conditional:"mitsukereba",conditional_neg:"mitsukenakereba"},
+    example_sentence:"財布を見つけました。",example_sentence_en:"I found my wallet."
+  },
+  {
+    dictionary:"喜ぶ",hiragana:"よろこぶ",romaji:"yorokobu",meaning_en:"to be glad / pleased",group:"godan",level:"N3",
+    forms:{present:"喜ぶ",present_polite:"喜びます",past:"喜んだ",past_polite:"喜びました",negative:"喜ばない",negative_polite:"喜びません",neg_past:"喜ばなかった",neg_past_polite:"喜びませんでした",te_form:"喜んで",neg_te:"喜ばなくて",ing_form:"喜んでいる",tai_form:"喜びたい",potential:"喜べる",potential_neg:"喜べない",volitional:"喜ぼう",passive:"喜ばれる",causative:"喜ばせる",imperative:"喜べ",conditional:"喜べば",conditional_neg:"喜ばなければ"},
+    forms_romaji:{present:"yorokobu",present_polite:"yorokobimasu",past:"yorokonda",past_polite:"yorokobimashita",negative:"yorokobanai",negative_polite:"yorokobimasen",neg_past:"yorokobanakatta",neg_past_polite:"yorokobimasen deshita",te_form:"yorokonde",neg_te:"yorokobanakute",ing_form:"yorokonde iru",tai_form:"yorokobitai",potential:"yorokoberu",potential_neg:"yorokobenai",volitional:"yorokobou",passive:"yorokobareru",causative:"yorokobaseru",imperative:"yorokobe",conditional:"yorokobeba",conditional_neg:"yorokobanakereba"},
+    example_sentence:"プレゼントをもらって喜びました。",example_sentence_en:"I was pleased to receive a gift."
+  },
+  {
+    dictionary:"驚く",hiragana:"おどろく",romaji:"odoroku",meaning_en:"to be surprised / astonished",group:"godan",level:"N3",
+    forms:{present:"驚く",present_polite:"驚きます",past:"驚いた",past_polite:"驚きました",negative:"驚かない",negative_polite:"驚きません",neg_past:"驚かなかった",neg_past_polite:"驚きませんでした",te_form:"驚いて",neg_te:"驚かなくて",ing_form:"驚いている",tai_form:"驚きたい",potential:"驚ける",potential_neg:"驚けない",volitional:"驚こう",passive:"驚かれる",causative:"驚かせる",imperative:"驚け",conditional:"驚けば",conditional_neg:"驚かなければ"},
+    forms_romaji:{present:"odoroku",present_polite:"odorokimasu",past:"odoroita",past_polite:"odorokimashita",negative:"oodorokanai",negative_polite:"odorokimasen",neg_past:"odorokanakatta",neg_past_polite:"odorokimasen deshita",te_form:"odoroite",neg_te:"odorokanakute",ing_form:"odoroite iru",tai_form:"odorokitai",potential:"odorokeru",potential_neg:"odorookenai",volitional:"odorokou",passive:"odorokareru",causative:"odorokaseru",imperative:"odoroke",conditional:"odorokeba",conditional_neg:"odorokanakereba"},
+    example_sentence:"ニュースを聞いて驚きました。",example_sentence_en:"I was surprised to hear the news."
+  },
+  {
+    dictionary:"困る",hiragana:"こまる",romaji:"komaru",meaning_en:"to be troubled / in trouble",group:"godan",level:"N4",
+    forms:{present:"困る",present_polite:"困ります",past:"困った",past_polite:"困りました",negative:"困らない",negative_polite:"困りません",neg_past:"困らなかった",neg_past_polite:"困りませんでした",te_form:"困って",neg_te:"困らなくて",ing_form:"困っている",tai_form:"困りたい",potential:"困れる",potential_neg:"困れない",volitional:"困ろう",passive:"困られる",causative:"困らせる",imperative:"困れ",conditional:"困れば",conditional_neg:"困らなければ"},
+    forms_romaji:{present:"komaru",present_polite:"komarimasu",past:"komatta",past_polite:"komarimashita",negative:"komaranai",negative_polite:"komarimasen",neg_past:"komaranakatta",neg_past_polite:"komarimasen deshita",te_form:"komatte",neg_te:"komaranakute",ing_form:"komatte iru",tai_form:"komaritai",potential:"komareru",potential_neg:"komarenai",volitional:"komarou",passive:"komarareru",causative:"komaraseru",imperative:"komare",conditional:"komareba",conditional_neg:"komaranakereba"},
+    example_sentence:"お金がなくて困っています。",example_sentence_en:"I'm in trouble because I have no money."
+  },
+  {
+    dictionary:"急ぐ",hiragana:"いそぐ",romaji:"isogu",meaning_en:"to hurry / rush",group:"godan",level:"N4",
+    forms:{present:"急ぐ",present_polite:"急ぎます",past:"急いだ",past_polite:"急ぎました",negative:"急がない",negative_polite:"急ぎません",neg_past:"急がなかった",neg_past_polite:"急ぎませんでした",te_form:"急いで",neg_te:"急がなくて",ing_form:"急いでいる",tai_form:"急ぎたい",potential:"急げる",potential_neg:"急げない",volitional:"急ごう",passive:"急がれる",causative:"急がせる",imperative:"急げ",conditional:"急げば",conditional_neg:"急がなければ"},
+    forms_romaji:{present:"isogu",present_polite:"isogimasu",past:"isoida",past_polite:"isogimashita",negative:"isoganai",negative_polite:"isogimasen",neg_past:"isoganakatta",neg_past_polite:"isogimasen deshita",te_form:"isoide",neg_te:"isoganakute",ing_form:"isoide iru",tai_form:"isogitai",potential:"isogeru",potential_neg:"isogenai",volitional:"isogou",passive:"isogareru",causative:"isogaseru",imperative:"isoge",conditional:"isogeba",conditional_neg:"isoganakereba"},
+    example_sentence:"急いでください。",example_sentence_en:"Please hurry."
+  },
+  {
+    dictionary:"止まる",hiragana:"とまる",romaji:"tomaru",meaning_en:"to stop / come to a halt",group:"godan",level:"N4",
+    forms:{present:"止まる",present_polite:"止まります",past:"止まった",past_polite:"止まりました",negative:"止まらない",negative_polite:"止まりません",neg_past:"止まらなかった",neg_past_polite:"止まりませんでした",te_form:"止まって",neg_te:"止まらなくて",ing_form:"止まっている",tai_form:"止まりたい",potential:"止まれる",potential_neg:"止まれない",volitional:"止まろう",passive:"止まられる",causative:"止まらせる",imperative:"止まれ",conditional:"止まれば",conditional_neg:"止まらなければ"},
+    forms_romaji:{present:"tomaru",present_polite:"tomarimasu",past:"tomatta",past_polite:"tomarimashita",negative:"tomaranai",negative_polite:"tomarimasen",neg_past:"tomaranakatta",neg_past_polite:"tomarimasen deshita",te_form:"tomatte",neg_te:"tomaranakute",ing_form:"tomatte iru",tai_form:"tomaritai",potential:"tomareru",potential_neg:"tomarenai",volitional:"tomarou",passive:"tomarareru",causative:"tomaraseru",imperative:"tomare",conditional:"tomareba",conditional_neg:"tomaranakereba"},
+    example_sentence:"バスが止まりました。",example_sentence_en:"The bus stopped."
+  },
+  {
+    dictionary:"動く",hiragana:"うごく",romaji:"ugoku",meaning_en:"to move",group:"godan",level:"N4",
+    forms:{present:"動く",present_polite:"動きます",past:"動いた",past_polite:"動きました",negative:"動かない",negative_polite:"動きません",neg_past:"動かなかった",neg_past_polite:"動きませんでした",te_form:"動いて",neg_te:"動かなくて",ing_form:"動いている",tai_form:"動きたい",potential:"動ける",potential_neg:"動けない",volitional:"動こう",passive:"動かれる",causative:"動かせる",imperative:"動け",conditional:"動けば",conditional_neg:"動かなければ"},
+    forms_romaji:{present:"ugoku",present_polite:"ugokimasu",past:"ugoita",past_polite:"ugokimashita",negative:"ugokanai",negative_polite:"ugokimasen",neg_past:"ugokanakatta",neg_past_polite:"ugokimasen deshita",te_form:"ugoite",neg_te:"ugokanakute",ing_form:"ugoite iru",tai_form:"ugokitai",potential:"ugokeru",potential_neg:"ugokenai",volitional:"ugokou",passive:"ugokareru",causative:"ugokaseru",imperative:"ugoke",conditional:"ugokeba",conditional_neg:"ugokanakereba"},
+    example_sentence:"体を動かしましょう。",example_sentence_en:"Let's move our bodies."
+  },
+  {
+    dictionary:"落とす",hiragana:"おとす",romaji:"otosu",meaning_en:"to drop / let fall",group:"godan",level:"N3",
+    forms:{present:"落とす",present_polite:"落とします",past:"落とした",past_polite:"落としました",negative:"落とさない",negative_polite:"落としません",neg_past:"落とさなかった",neg_past_polite:"落としませんでした",te_form:"落として",neg_te:"落とさなくて",ing_form:"落としている",tai_form:"落としたい",potential:"落とせる",potential_neg:"落とせない",volitional:"落とそう",passive:"落とされる",causative:"落とさせる",imperative:"落とせ",conditional:"落とせば",conditional_neg:"落とさなければ"},
+    forms_romaji:{present:"otosu",present_polite:"otoshimasu",past:"otoshita",past_polite:"otoshimashita",negative:"otosanai",negative_polite:"otoshimasen",neg_past:"otosanakatta",neg_past_polite:"otoshimasen deshita",te_form:"otoshite",neg_te:"otosanakute",ing_form:"otoshite iru",tai_form:"otoshitai",potential:"otoseru",potential_neg:"otosenai",volitional:"otosou",passive:"otosareru",causative:"otosaseru",imperative:"otose",conditional:"otoseba",conditional_neg:"otosanakereba"},
+    example_sentence:"鍵を落としました。",example_sentence_en:"I dropped my key."
+  },
+  {
+    dictionary:"拾う",hiragana:"ひろう",romaji:"hirou",meaning_en:"to pick up",group:"godan",level:"N4",
+    forms:{present:"拾う",present_polite:"拾います",past:"拾った",past_polite:"拾いました",negative:"拾わない",negative_polite:"拾いません",neg_past:"拾わなかった",neg_past_polite:"拾いませんでした",te_form:"拾って",neg_te:"拾わなくて",ing_form:"拾っている",tai_form:"拾いたい",potential:"拾える",potential_neg:"拾えない",volitional:"拾おう",passive:"拾われる",causative:"拾わせる",imperative:"拾え",conditional:"拾えば",conditional_neg:"拾わなければ"},
+    forms_romaji:{present:"hirou",present_polite:"hiroimasu",past:"hirotta",past_polite:"hiroimashita",negative:"hirowananai",negative_polite:"hiroiemasen",neg_past:"hirowananakatta",neg_past_polite:"hiroimasen deshita",te_form:"hirotte",neg_te:"hirowananakute",ing_form:"hirotte iru",tai_form:"hiroitai",potential:"hiroeru",potential_neg:"hiroenai",volitional:"hiroou",passive:"hirowareru",causative:"hirowaseru",imperative:"hiroe",conditional:"hiroeba",conditional_neg:"hirowanakereba"},
+    example_sentence:"財布を拾いました。",example_sentence_en:"I picked up a wallet."
+  },
+  {
+    dictionary:"直す",hiragana:"なおす",romaji:"naosu",meaning_en:"to fix / repair / correct",group:"godan",level:"N3",
+    forms:{present:"直す",present_polite:"直します",past:"直した",past_polite:"直しました",negative:"直さない",negative_polite:"直しません",neg_past:"直さなかった",neg_past_polite:"直しませんでした",te_form:"直して",neg_te:"直さなくて",ing_form:"直している",tai_form:"直したい",potential:"直せる",potential_neg:"直せない",volitional:"直そう",passive:"直される",causative:"直させる",imperative:"直せ",conditional:"直せば",conditional_neg:"直さなければ"},
+    forms_romaji:{present:"naosu",present_polite:"naoshimasu",past:"naoshita",past_polite:"naoshimashita",negative:"naosanai",negative_polite:"naoshimasen",neg_past:"naosanakatta",neg_past_polite:"naoshimasen deshita",te_form:"naoshite",neg_te:"naosanakute",ing_form:"naoshite iru",tai_form:"naoshitai",potential:"naoseru",potential_neg:"naosenaI",volitional:"naosou",passive:"naosareru",causative:"naosaseru",imperative:"naose",conditional:"naoseba",conditional_neg:"naosanakereba"},
+    example_sentence:"パソコンを直します。",example_sentence_en:"I fix the computer."
+  },
+  {
+    dictionary:"増える",hiragana:"ふえる",romaji:"fueru",meaning_en:"to increase / grow",group:"ichidan",level:"N3",
+    forms:{present:"増える",present_polite:"増えます",past:"増えた",past_polite:"増えました",negative:"増えない",negative_polite:"増えません",neg_past:"増えなかった",neg_past_polite:"増えませんでした",te_form:"増えて",neg_te:"増えなくて",ing_form:"増えている",tai_form:"増えたい",potential:"増えられる",potential_neg:"増えられない",volitional:"増えよう",passive:"増えられる",causative:"増えさせる",imperative:"増えろ",conditional:"増えれば",conditional_neg:"増えなければ"},
+    forms_romaji:{present:"fueru",present_polite:"fuemasu",past:"fueta",past_polite:"fuemashita",negative:"fuenai",negative_polite:"fuemasen",neg_past:"fuenakatta",neg_past_polite:"fuemasen deshita",te_form:"fuete",neg_te:"fuenakute",ing_form:"fuete iru",tai_form:"fuetai",potential:"fuererareru",potential_neg:"fuererarenai",volitional:"fueyou",passive:"fuererareru",causative:"fuesaseru",imperative:"fuero",conditional:"fuereba",conditional_neg:"fuenakereba"},
+    example_sentence:"人口が増えています。",example_sentence_en:"The population is increasing."
+  },
+  {
+    dictionary:"減る",hiragana:"へる",romaji:"heru",meaning_en:"to decrease / reduce",group:"godan",level:"N3",
+    forms:{present:"減る",present_polite:"減ります",past:"減った",past_polite:"減りました",negative:"減らない",negative_polite:"減りません",neg_past:"減らなかった",neg_past_polite:"減りませんでした",te_form:"減って",neg_te:"減らなくて",ing_form:"減っている",tai_form:"減りたい",potential:"減れる",potential_neg:"減れない",volitional:"減ろう",passive:"減られる",causative:"減らせる",imperative:"減れ",conditional:"減れば",conditional_neg:"減らなければ"},
+    forms_romaji:{present:"heru",present_polite:"herimasu",past:"hetta",past_polite:"herimashita",negative:"heranai",negative_polite:"herimasen",neg_past:"heranakatta",neg_past_polite:"herimasen deshita",te_form:"hette",neg_te:"heranakute",ing_form:"hette iru",tai_form:"heritai",potential:"hereru",potential_neg:"herenai",volitional:"herou",passive:"herrareru",causative:"heraseru",imperative:"here",conditional:"hereba",conditional_neg:"heranakereba"},
+    example_sentence:"体重が減りました。",example_sentence_en:"My weight decreased."
+  },
+  {
+    dictionary:"集める",hiragana:"あつめる",romaji:"atsumeru",meaning_en:"to collect / gather",group:"ichidan",level:"N3",
+    forms:{present:"集める",present_polite:"集めます",past:"集めた",past_polite:"集めました",negative:"集めない",negative_polite:"集めません",neg_past:"集めなかった",neg_past_polite:"集めませんでした",te_form:"集めて",neg_te:"集めなくて",ing_form:"集めている",tai_form:"集めたい",potential:"集められる",potential_neg:"集められない",volitional:"集めよう",passive:"集められる",causative:"集めさせる",imperative:"集めろ",conditional:"集めれば",conditional_neg:"集めなければ"},
+    forms_romaji:{present:"atsumeru",present_polite:"atsumemasu",past:"atsumeta",past_polite:"atsumemashita",negative:"atsumenai",negative_polite:"atsumemasen",neg_past:"atsumenakatta",neg_past_polite:"atsumemasen deshita",te_form:"atsumete",neg_te:"atsumenakute",ing_form:"atsumete iru",tai_form:"atsumetai",potential:"atsumerareru",potential_neg:"atsumerarenai",volitional:"atsumeyou",passive:"atsumerareru",causative:"atsumesaseru",imperative:"atsumero",conditional:"atsumereba",conditional_neg:"atsumenakereba"},
+    example_sentence:"切手を集めています。",example_sentence_en:"I collect stamps."
+  },
+  {
+    dictionary:"選ぶ",hiragana:"えらぶ",romaji:"erabu",meaning_en:"to choose / select",group:"godan",level:"N3",
+    forms:{present:"選ぶ",present_polite:"選びます",past:"選んだ",past_polite:"選びました",negative:"選ばない",negative_polite:"選びません",neg_past:"選ばなかった",neg_past_polite:"選びませんでした",te_form:"選んで",neg_te:"選ばなくて",ing_form:"選んでいる",tai_form:"選びたい",potential:"選べる",potential_neg:"選べない",volitional:"選ぼう",passive:"選ばれる",causative:"選ばせる",imperative:"選べ",conditional:"選べば",conditional_neg:"選ばなければ"},
+    forms_romaji:{present:"erabu",present_polite:"erabimasu",past:"eranda",past_polite:"erabimashita",negative:"erabanai",negative_polite:"erabimasen",neg_past:"erabanakatta",neg_past_polite:"erabimasen deshita",te_form:"erande",neg_te:"erabanakute",ing_form:"erande iru",tai_form:"erabitai",potential:"eraberu",potential_neg:"erabenai",volitional:"erabou",passive:"erabareru",causative:"erabaseru",imperative:"erabe",conditional:"erabeba",conditional_neg:"erabanakereba"},
+    example_sentence:"好きな色を選んでください。",example_sentence_en:"Please choose your favorite color."
+  },
+  {
+    dictionary:"並ぶ",hiragana:"ならぶ",romaji:"narabu",meaning_en:"to line up / stand in line",group:"godan",level:"N3",
+    forms:{present:"並ぶ",present_polite:"並びます",past:"並んだ",past_polite:"並びました",negative:"並ばない",negative_polite:"並びません",neg_past:"並ばなかった",neg_past_polite:"並びませんでした",te_form:"並んで",neg_te:"並ばなくて",ing_form:"並んでいる",tai_form:"並びたい",potential:"並べる",potential_neg:"並べない",volitional:"並ぼう",passive:"並ばれる",causative:"並ばせる",imperative:"並べ",conditional:"並べば",conditional_neg:"並ばなければ"},
+    forms_romaji:{present:"narabu",present_polite:"narabimasu",past:"naranda",past_polite:"narabimashita",negative:"narabanai",negative_polite:"narabimasen",neg_past:"narabanakatta",neg_past_polite:"narabimasen deshita",te_form:"narande",neg_te:"narabanakute",ing_form:"narande iru",tai_form:"narabitai",potential:"naraberu",potential_neg:"narabenai",volitional:"narabou",passive:"narabareru",causative:"narabaseru",imperative:"narabe",conditional:"narabeba",conditional_neg:"narabanakereba"},
+    example_sentence:"列に並んでください。",example_sentence_en:"Please line up."
+  },
+  {
+    dictionary:"並べる",hiragana:"ならべる",romaji:"naraberu",meaning_en:"to line up / arrange",group:"ichidan",level:"N3",
+    forms:{present:"並べる",present_polite:"並べます",past:"並べた",past_polite:"並べました",negative:"並べない",negative_polite:"並べません",neg_past:"並べなかった",neg_past_polite:"並べませんでした",te_form:"並べて",neg_te:"並べなくて",ing_form:"並べている",tai_form:"並べたい",potential:"並べられる",potential_neg:"並べられない",volitional:"並べよう",passive:"並べられる",causative:"並べさせる",imperative:"並べろ",conditional:"並べれば",conditional_neg:"並べなければ"},
+    forms_romaji:{present:"naraberu",present_polite:"narabemasu",past:"narabeta",past_polite:"narabemashita",negative:"narabenai",negative_polite:"narabemasen",neg_past:"narabenakatta",neg_past_polite:"narabemasen deshita",te_form:"narabete",neg_te:"narabenakute",ing_form:"narabete iru",tai_form:"narabetai",potential:"naraberareru",potential_neg:"naraberarenai",volitional:"narabeyou",passive:"naraberareru",causative:"narabesaseru",imperative:"narabero",conditional:"narabereba",conditional_neg:"narabenakereba"},
+    example_sentence:"本を棚に並べます。",example_sentence_en:"I arrange books on the shelf."
+  },
+  {
+    dictionary:"払う",hiragana:"はらう",romaji:"harau",meaning_en:"to pay",group:"godan",level:"N4",
+    forms:{present:"払う",present_polite:"払います",past:"払った",past_polite:"払いました",negative:"払わない",negative_polite:"払いません",neg_past:"払わなかった",neg_past_polite:"払いませんでした",te_form:"払って",neg_te:"払わなくて",ing_form:"払っている",tai_form:"払いたい",potential:"払える",potential_neg:"払えない",volitional:"払おう",passive:"払われる",causative:"払わせる",imperative:"払え",conditional:"払えば",conditional_neg:"払わなければ"},
+    forms_romaji:{present:"harau",present_polite:"haraimasu",past:"haratta",past_polite:"haraimashita",negative:"harawanai",negative_polite:"haraimasen",neg_past:"harawanakatta",neg_past_polite:"haraimasen deshita",te_form:"haratte",neg_te:"harawanakute",ing_form:"haratte iru",tai_form:"haraitai",potential:"haraeru",potential_neg:"haraenai",volitional:"haraou",passive:"harawareru",causative:"harawaseru",imperative:"harae",conditional:"haraeba",conditional_neg:"harawanakereba"},
+    example_sentence:"お金を払います。",example_sentence_en:"I pay money."
+  },
+  {
+    dictionary:"頼む",hiragana:"たのむ",romaji:"tanomu",meaning_en:"to ask / request",group:"godan",level:"N4",
+    forms:{present:"頼む",present_polite:"頼みます",past:"頼んだ",past_polite:"頼みました",negative:"頼まない",negative_polite:"頼みません",neg_past:"頼まなかった",neg_past_polite:"頼みませんでした",te_form:"頼んで",neg_te:"頼まなくて",ing_form:"頼んでいる",tai_form:"頼みたい",potential:"頼める",potential_neg:"頼めない",volitional:"頼もう",passive:"頼まれる",causative:"頼ませる",imperative:"頼め",conditional:"頼めば",conditional_neg:"頼まなければ"},
+    forms_romaji:{present:"tanomu",present_polite:"tanomimasu",past:"tanonda",past_polite:"tanomimashita",negative:"tanomanai",negative_polite:"tanomimasen",neg_past:"tanomanakatta",neg_past_polite:"tanomimasen deshita",te_form:"tanonde",neg_te:"tanomanakute",ing_form:"tanonde iru",tai_form:"tanomitai",potential:"tanomeru",potential_neg:"tanomenai",volitional:"tanomoу",passive:"tanomareru",causative:"tanomaseru",imperative:"tanome",conditional:"tanomeba",conditional_neg:"tanomanakereba"},
+    example_sentence:"助けを頼みます。",example_sentence_en:"I ask for help."
+  },
+  {
+    dictionary:"断る",hiragana:"ことわる",romaji:"kotowaru",meaning_en:"to refuse / decline",group:"godan",level:"N3",
+    forms:{present:"断る",present_polite:"断ります",past:"断った",past_polite:"断りました",negative:"断らない",negative_polite:"断りません",neg_past:"断らなかった",neg_past_polite:"断りませんでした",te_form:"断って",neg_te:"断らなくて",ing_form:"断っている",tai_form:"断りたい",potential:"断れる",potential_neg:"断れない",volitional:"断ろう",passive:"断られる",causative:"断らせる",imperative:"断れ",conditional:"断れば",conditional_neg:"断らなければ"},
+    forms_romaji:{present:"kotowaru",present_polite:"kotowarimasu",past:"kotowatta",past_polite:"kotowarimashita",negative:"kotowaranai",negative_polite:"kotowarimasen",neg_past:"kotowaranakatta",neg_past_polite:"kotowarimasen deshita",te_form:"kotowatte",neg_te:"kotowaranakute",ing_form:"kotowatte iru",tai_form:"kotowaritai",potential:"kotowareru",potential_neg:"kotowarenai",volitional:"kotowarou",passive:"kotowareru",causative:"kotowaraseru",imperative:"kotowaret",conditional:"kotowareba",conditional_neg:"kotowaranakereba"},
+    example_sentence:"誘いを断りました。",example_sentence_en:"I declined the invitation."
+  },
+  {
+    dictionary:"準備する",hiragana:"じゅんびする",romaji:"junbisuru",meaning_en:"to prepare",group:"irregular",level:"N4",
+    forms:{present:"準備する",present_polite:"準備します",past:"準備した",past_polite:"準備しました",negative:"準備しない",negative_polite:"準備しません",neg_past:"準備しなかった",neg_past_polite:"準備しませんでした",te_form:"準備して",neg_te:"準備しなくて",ing_form:"準備している",tai_form:"準備したい",potential:"準備できる",potential_neg:"準備できない",volitional:"準備しよう",passive:"準備される",causative:"準備させる",imperative:"準備しろ",conditional:"準備すれば",conditional_neg:"準備しなければ"},
+    forms_romaji:{present:"junbi suru",present_polite:"junbi shimasu",past:"junbi shita",past_polite:"junbi shimashita",negative:"junbi shinai",negative_polite:"junbi shimasen",neg_past:"junbi shinakatta",neg_past_polite:"junbi shimasen deshita",te_form:"junbi shite",neg_te:"junbi shinakute",ing_form:"junbi shite iru",tai_form:"junbi shitai",potential:"junbi dekiru",potential_neg:"junbi dekinai",volitional:"junbi shiyou",passive:"junbi sareru",causative:"junbi saseru",imperative:"junbi shiro",conditional:"junbi sureba",conditional_neg:"junbi shinakereba"},
+    example_sentence:"試験の準備をします。",example_sentence_en:"I prepare for the exam."
+  },
+  {
+    dictionary:"練習する",hiragana:"れんしゅうする",romaji:"renshuusuru",meaning_en:"to practice",group:"irregular",level:"N4",
+    forms:{present:"練習する",present_polite:"練習します",past:"練習した",past_polite:"練習しました",negative:"練習しない",negative_polite:"練習しません",neg_past:"練習しなかった",neg_past_polite:"練習しませんでした",te_form:"練習して",neg_te:"練習しなくて",ing_form:"練習している",tai_form:"練習したい",potential:"練習できる",potential_neg:"練習できない",volitional:"練習しよう",passive:"練習される",causative:"練習させる",imperative:"練習しろ",conditional:"練習すれば",conditional_neg:"練習しなければ"},
+    forms_romaji:{present:"renshuu suru",present_polite:"renshuu shimasu",past:"renshuu shita",past_polite:"renshuu shimashita",negative:"renshuu shinai",negative_polite:"renshuu shimasen",neg_past:"renshuu shinakatta",neg_past_polite:"renshuu shimasen deshita",te_form:"renshuu shite",neg_te:"renshuu shinakute",ing_form:"renshuu shite iru",tai_form:"renshuu shitai",potential:"renshuu dekiru",potential_neg:"renshuu dekinai",volitional:"renshuu shiyou",passive:"renshuu sareru",causative:"renshuu saseru",imperative:"renshuu shiro",conditional:"renshuu sureba",conditional_neg:"renshuu shinakereba"},
+    example_sentence:"毎日練習します。",example_sentence_en:"I practice every day."
+  },
+  {
+    dictionary:"旅行する",hiragana:"りょこうする",romaji:"ryoukousuru",meaning_en:"to travel",group:"irregular",level:"N4",
+    forms:{present:"旅行する",present_polite:"旅行します",past:"旅行した",past_polite:"旅行しました",negative:"旅行しない",negative_polite:"旅行しません",neg_past:"旅行しなかった",neg_past_polite:"旅行しませんでした",te_form:"旅行して",neg_te:"旅行しなくて",ing_form:"旅行している",tai_form:"旅行したい",potential:"旅行できる",potential_neg:"旅行できない",volitional:"旅行しよう",passive:"旅行される",causative:"旅行させる",imperative:"旅行しろ",conditional:"旅行すれば",conditional_neg:"旅行しなければ"},
+    forms_romaji:{present:"ryokou suru",present_polite:"ryokou shimasu",past:"ryokou shita",past_polite:"ryokou shimashita",negative:"ryokou shinai",negative_polite:"ryokou shimasen",neg_past:"ryokou shinakatta",neg_past_polite:"ryokou shimasen deshita",te_form:"ryokou shite",neg_te:"ryokou shinakute",ing_form:"ryokou shite iru",tai_form:"ryokou shitai",potential:"ryokou dekiru",potential_neg:"ryokou dekinai",volitional:"ryokou shiyou",passive:"ryokou sareru",causative:"ryokou saseru",imperative:"ryokou shiro",conditional:"ryokou sureba",conditional_neg:"ryokou shinakereba"},
+    example_sentence:"来年日本に旅行します。",example_sentence_en:"I will travel to Japan next year."
+  },
+  {
+    dictionary:"料理する",hiragana:"りょうりする",romaji:"ryourisuru",meaning_en:"to cook",group:"irregular",level:"N4",
+    forms:{present:"料理する",present_polite:"料理します",past:"料理した",past_polite:"料理しました",negative:"料理しない",negative_polite:"料理しません",neg_past:"料理しなかった",neg_past_polite:"料理しませんでした",te_form:"料理して",neg_te:"料理しなくて",ing_form:"料理している",tai_form:"料理したい",potential:"料理できる",potential_neg:"料理できない",volitional:"料理しよう",passive:"料理される",causative:"料理させる",imperative:"料理しろ",conditional:"料理すれば",conditional_neg:"料理しなければ"},
+    forms_romaji:{present:"ryouri suru",present_polite:"ryouri shimasu",past:"ryouri shita",past_polite:"ryouri shimashita",negative:"ryouri shinai",negative_polite:"ryouri shimasen",neg_past:"ryouri shinakatta",neg_past_polite:"ryouri shimasen deshita",te_form:"ryouri shite",neg_te:"ryouri shinakute",ing_form:"ryouri shite iru",tai_form:"ryouri shitai",potential:"ryouri dekiru",potential_neg:"ryouri dekinai",volitional:"ryouri shiyou",passive:"ryouri sareru",causative:"ryouri saseru",imperative:"ryouri shiro",conditional:"ryouri sureba",conditional_neg:"ryouri shinakereba"},
+    example_sentence:"夕食を料理します。",example_sentence_en:"I cook dinner."
+  },
+  {
+    dictionary:"運転する",hiragana:"うんてんする",romaji:"untensuru",meaning_en:"to drive",group:"irregular",level:"N4",
+    forms:{present:"運転する",present_polite:"運転します",past:"運転した",past_polite:"運転しました",negative:"運転しない",negative_polite:"運転しません",neg_past:"運転しなかった",neg_past_polite:"運転しませんでした",te_form:"運転して",neg_te:"運転しなくて",ing_form:"運転している",tai_form:"運転したい",potential:"運転できる",potential_neg:"運転できない",volitional:"運転しよう",passive:"運転される",causative:"運転させる",imperative:"運転しろ",conditional:"運転すれば",conditional_neg:"運転しなければ"},
+    forms_romaji:{present:"unten suru",present_polite:"unten shimasu",past:"unten shita",past_polite:"unten shimashita",negative:"unten shinai",negative_polite:"unten shimasen",neg_past:"unten shinakatta",neg_past_polite:"unten shimasen deshita",te_form:"unten shite",neg_te:"unten shinakute",ing_form:"unten shite iru",tai_form:"unten shitai",potential:"unten dekiru",potential_neg:"unten dekinai",volitional:"unten shiyou",passive:"unten sareru",causative:"unten saseru",imperative:"unten shiro",conditional:"unten sureba",conditional_neg:"unten shinakereba"},
+    example_sentence:"車を運転します。",example_sentence_en:"I drive a car."
+  },
+  {
+    dictionary:"説明する",hiragana:"せつめいする",romaji:"setsumeisuru",meaning_en:"to explain",group:"irregular",level:"N3",
+    forms:{present:"説明する",present_polite:"説明します",past:"説明した",past_polite:"説明しました",negative:"説明しない",negative_polite:"説明しません",neg_past:"説明しなかった",neg_past_polite:"説明しませんでした",te_form:"説明して",neg_te:"説明しなくて",ing_form:"説明している",tai_form:"説明したい",potential:"説明できる",potential_neg:"説明できない",volitional:"説明しよう",passive:"説明される",causative:"説明させる",imperative:"説明しろ",conditional:"説明すれば",conditional_neg:"説明しなければ"},
+    forms_romaji:{present:"setsumei suru",present_polite:"setsumei shimasu",past:"setsumei shita",past_polite:"setsumei shimashita",negative:"setsumei shinai",negative_polite:"setsumei shimasen",neg_past:"setsumei shinakatta",neg_past_polite:"setsumei shimasen deshita",te_form:"setsumei shite",neg_te:"setsumei shinakute",ing_form:"setsumei shite iru",tai_form:"setsumei shitai",potential:"setsumei dekiru",potential_neg:"setsumei dekinai",volitional:"setsumei shiyou",passive:"setsumei sareru",causative:"setsumei saseru",imperative:"setsumei shiro",conditional:"setsumei sureba",conditional_neg:"setsumei shinakereba"},
+    example_sentence:"もう一度説明してください。",example_sentence_en:"Please explain once more."
+  },
+  {
+    dictionary:"確認する",hiragana:"かくにんする",romaji:"kakuninsuru",meaning_en:"to confirm / check",group:"irregular",level:"N3",
+    forms:{present:"確認する",present_polite:"確認します",past:"確認した",past_polite:"確認しました",negative:"確認しない",negative_polite:"確認しません",neg_past:"確認しなかった",neg_past_polite:"確認しませんでした",te_form:"確認して",neg_te:"確認しなくて",ing_form:"確認している",tai_form:"確認したい",potential:"確認できる",potential_neg:"確認できない",volitional:"確認しよう",passive:"確認される",causative:"確認させる",imperative:"確認しろ",conditional:"確認すれば",conditional_neg:"確認しなければ"},
+    forms_romaji:{present:"kakunin suru",present_polite:"kakunin shimasu",past:"kakunin shita",past_polite:"kakunin shimashita",negative:"kakunin shinai",negative_polite:"kakunin shimasen",neg_past:"kakunin shinakatta",neg_past_polite:"kakunin shimasen deshita",te_form:"kakunin shite",neg_te:"kakunin shinakute",ing_form:"kakunin shite iru",tai_form:"kakunin shitai",potential:"kakunin dekiru",potential_neg:"kakunin dekinai",volitional:"kakunin shiyou",passive:"kakunin sareru",causative:"kakunin saseru",imperative:"kakunin shiro",conditional:"kakunin sureba",conditional_neg:"kakunin shinakereba"},
+    example_sentence:"予約を確認します。",example_sentence_en:"I confirm the reservation."
+  },
+  {
+    dictionary:"相談する",hiragana:"そうだんする",romaji:"soudansuru",meaning_en:"to consult / discuss",group:"irregular",level:"N3",
+    forms:{present:"相談する",present_polite:"相談します",past:"相談した",past_polite:"相談しました",negative:"相談しない",negative_polite:"相談しません",neg_past:"相談しなかった",neg_past_polite:"相談しませんでした",te_form:"相談して",neg_te:"相談しなくて",ing_form:"相談している",tai_form:"相談したい",potential:"相談できる",potential_neg:"相談できない",volitional:"相談しよう",passive:"相談される",causative:"相談させる",imperative:"相談しろ",conditional:"相談すれば",conditional_neg:"相談しなければ"},
+    forms_romaji:{present:"soudan suru",present_polite:"soudan shimasu",past:"soudan shita",past_polite:"soudan shimashita",negative:"soudan shinai",negative_polite:"soudan shimasen",neg_past:"soudan shinakatta",neg_past_polite:"soudan shimasen deshita",te_form:"soudan shite",neg_te:"soudan shinakute",ing_form:"soudan shite iru",tai_form:"soudan shitai",potential:"soudan dekiru",potential_neg:"soudan dekinai",volitional:"soudan shiyou",passive:"soudan sareru",causative:"soudan saseru",imperative:"soudan shiro",conditional:"soudan sureba",conditional_neg:"soudan shinakereba"},
+    example_sentence:"先生に相談します。",example_sentence_en:"I consult my teacher."
+  },
+  {
+    dictionary:"連絡する",hiragana:"れんらくする",romaji:"renrakusuru",meaning_en:"to contact / get in touch",group:"irregular",level:"N3",
+    forms:{present:"連絡する",present_polite:"連絡します",past:"連絡した",past_polite:"連絡しました",negative:"連絡しない",negative_polite:"連絡しません",neg_past:"連絡しなかった",neg_past_polite:"連絡しませんでした",te_form:"連絡して",neg_te:"連絡しなくて",ing_form:"連絡している",tai_form:"連絡したい",potential:"連絡できる",potential_neg:"連絡できない",volitional:"連絡しよう",passive:"連絡される",causative:"連絡させる",imperative:"連絡しろ",conditional:"連絡すれば",conditional_neg:"連絡しなければ"},
+    forms_romaji:{present:"renraku suru",present_polite:"renraku shimasu",past:"renraku shita",past_polite:"renraku shimashita",negative:"renraku shinai",negative_polite:"renraku shimasen",neg_past:"renraku shinakatta",neg_past_polite:"renraku shimasen deshita",te_form:"renraku shite",neg_te:"renraku shinakute",ing_form:"renraku shite iru",tai_form:"renraku shitai",potential:"renraku dekiru",potential_neg:"renraku dekinai",volitional:"renraku shiyou",passive:"renraku sareru",causative:"renraku saseru",imperative:"renraku shiro",conditional:"renraku sureba",conditional_neg:"renraku shinakereba"},
+    example_sentence:"後で連絡します。",example_sentence_en:"I will contact you later."
+  },
 ];

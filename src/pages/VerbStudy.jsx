@@ -97,7 +97,7 @@ export default function VerbStudy() {
     const matchLevel = levelFilter === 'all' || v.level === levelFilter;
     const matchTag = !tagFilter || (activeTag?.verb_ids || []).includes(v.id);
     return matchSearch && matchLevel && matchTag;
-  });
+  }).sort((a, b) => (a.romaji || '').localeCompare(b.romaji || ''));
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
