@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { useLang } from '@/lib/LanguageContext';
 import SpeakButton from '@/components/shared/SpeakButton';
 import LevelBadge from '@/components/shared/LevelBadge';
+import { verbAudioMap } from '@/lib/verbAudio';
 
 const formLabels = {
   present: 'present', present_polite: 'presentPolite',
@@ -21,6 +22,7 @@ export default function VerbCard({ verb }) {
   const [flipped, setFlipped] = useState(false);
   const [showAllForms, setShowAllForms] = useState(false);
   const { t } = useLang();
+  const audioUrl = verbAudioMap[verb.romaji];
 
   const mainForms = ['present', 'past', 'negative', 'te_form'];
   const extraForms = ['present_polite', 'past_polite', 'negative_polite', 'potential', 'volitional', 'passive', 'causative'];
@@ -46,7 +48,7 @@ export default function VerbCard({ verb }) {
                 <p className="font-latin text-xs text-muted-foreground">{verb.romaji}</p>
               </div>
               <div className="flex items-center gap-1">
-                <SpeakButton text={verb.dictionary} />
+                <SpeakButton text={verb.dictionary} audioUrl={audioUrl} />
                 <LevelBadge level={verb.level} />
               </div>
             </div>

@@ -4,6 +4,7 @@ import { X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import SpeakButton from '@/components/shared/SpeakButton';
 import LevelBadge from '@/components/shared/LevelBadge';
+import { verbAudioMap } from '@/lib/verbAudio';
 import { useLang } from '@/lib/LanguageContext';
 
 const groupColors = {
@@ -42,6 +43,7 @@ function ConjBlock({ title, rows }) {
 export default function ConjugationDrawer({ verb, onClose }) {
   const { t } = useLang();
   if (!verb) return null;
+  const audioUrl = verbAudioMap[verb.romaji];
 
   const f = verb.forms || {};
   const r = verb.forms_romaji || {};
@@ -138,7 +140,7 @@ export default function ConjugationDrawer({ verb, onClose }) {
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-jp text-2xl font-bold text-foreground">{verb.dictionary}</span>
-                <SpeakButton text={verb.dictionary} />
+                <SpeakButton text={verb.dictionary} audioUrl={audioUrl} />
               </div>
               <div className="flex items-center gap-3 text-xs text-muted-foreground mt-0.5">
                 <span>{verb.romaji}</span>

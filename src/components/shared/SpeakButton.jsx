@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 // Cache generated audio URLs so we don't regenerate (and re-spend credits) for the same text
 const audioCache = new Map();
 
-export default function SpeakButton({ text, size = 'sm', className = '' }) {
+export default function SpeakButton({ text, audioUrl, size = 'sm', className = '' }) {
   const [speaking, setSpeaking] = useState(false);
   const audioRef = useRef(null);
 
@@ -37,11 +37,17 @@ export default function SpeakButton({ text, size = 'sm', className = '' }) {
     }
     setSpeaking(true);
 
-    // 1. Try the device's native Japanese voice (free, instant)
+    // 1. If a pre-recorded MP3 URL is provided, use it directly
+    if (audioUrl) {
+      playUrl(audioUrl);
+      return;
+    }
+
+    // 2. Try the device's native Japanese voice (free, instant)
     const usedNative = await speakJapanese(text, () => setSpeaking(false));
     if (usedNative) return;
 
-    // 2. No native Japanese voice on this device → use server-generated native speech
+    // 3. No native Japanese voice on this device → use server-generated native speech
     if (audioCache.has(text)) {
       playUrl(audioCache.get(text));
       return;
