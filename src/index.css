@@ -10,20 +10,20 @@
     --font-latin: 'Inter', sans-serif;
 
     /* Washi White light theme */
-    --background: 60 10% 96%;          /* #F5F5F0 washi white */
-    --foreground: 220 40% 15%;         /* #1A2A4A deep indigo */
-    --card: 0 0% 100%;                 /* pure white cards */
-    --card-foreground: 220 40% 15%;
+    --background: 30 30% 97%;          /* warm cream */
+    --foreground: 20 30% 15%;          /* dark warm brown */
+    --card: 0 0% 100%;
+    --card-foreground: 20 30% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 40% 15%;
-    --primary: 220 45% 19%;            /* #1A2A4A indigo */
-    --primary-foreground: 60 10% 96%;  /* washi white on indigo */
-    --secondary: 60 8% 91%;            /* soft warm off-white */
-    --secondary-foreground: 220 40% 25%;
-    --muted: 60 6% 88%;
-    --muted-foreground: 220 15% 45%;
-    --accent: 43 55% 52%;              /* #C9A03D gold */
-    --accent-foreground: 220 40% 15%;
+    --popover-foreground: 20 30% 15%;
+    --primary: 20 25% 20%;             /* dark bear brown */
+    --primary-foreground: 30 30% 97%;
+    --secondary: 30 20% 92%;           /* soft peach/cream */
+    --secondary-foreground: 20 25% 25%;
+    --muted: 30 15% 88%;
+    --muted-foreground: 20 10% 45%;
+    --accent: 35 90% 55%;              /* warm amber/orange */
+    --accent-foreground: 0 0% 100%;
     --destructive: 8 62% 44%;          /* #B53A2B brick red */
     --destructive-foreground: 0 0% 98%;
     --border: 220 15% 85%;
@@ -35,14 +35,14 @@
     --chart-4: 0 100% 71%;             /* coral */
     --chart-5: 144 25% 39%;            /* moss green */
     --radius: 0.75rem;
-    --sidebar-background: 220 40% 15%;
-    --sidebar-foreground: 60 10% 96%;
-    --sidebar-primary: 43 55% 52%;
-    --sidebar-primary-foreground: 220 40% 15%;
-    --sidebar-accent: 220 35% 22%;
-    --sidebar-accent-foreground: 60 10% 96%;
-    --sidebar-border: 220 25% 25%;
-    --sidebar-ring: 43 55% 52%;
+    --sidebar-background: 20 25% 15%;
+    --sidebar-foreground: 30 30% 95%;
+    --sidebar-primary: 35 90% 55%;
+    --sidebar-primary-foreground: 20 25% 15%;
+    --sidebar-accent: 20 20% 22%;
+    --sidebar-accent-foreground: 30 30% 95%;
+    --sidebar-border: 20 15% 25%;
+    --sidebar-ring: 35 90% 55%;
 
     /* Custom semantic tokens */
     --success: 144 25% 39%;            /* #4A7C59 moss green */

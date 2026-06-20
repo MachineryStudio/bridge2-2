@@ -32,6 +32,7 @@ export default function Navbar({ playerStats }) {
     { path: '/games', label: t('gameHub') },
     { path: '/quiz', label: 'Timed Quiz' },
     { path: '/profile', label: 'Profile' },
+    { path: '/kumago', label: 'kumaGO くまごー' },
   ];
 
   const isActive = (path) => location.pathname === path;

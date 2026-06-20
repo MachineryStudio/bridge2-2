@@ -13,6 +13,7 @@ import GrammarStudy from '@/pages/GrammarStudy';
 import GameHub from '@/pages/GameHub';
 import TimedQuiz from '@/pages/TimedQuiz';
 import Profile from '@/pages/Profile';
+import KumaGO from '@/pages/KumaGO';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -46,6 +47,7 @@ const AuthenticatedApp = () => {
         <Route path="/games" element={<GameHub />} />
         <Route path="/quiz" element={<TimedQuiz />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/kumago" element={<KumaGO />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
