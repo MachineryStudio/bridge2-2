@@ -13,6 +13,7 @@ import TagManagerModal from '@/components/verbs/TagManagerModal';
 import VerbTagAssigner from '@/components/verbs/VerbTagAssigner';
 import ConjugationPractice from '@/components/verbs/ConjugationPractice';
 import { verbData } from '@/lib/verbData';
+import { verbAudioMap } from '@/lib/verbAudio';
 
 const LEVELS = ['all', 'N5', 'N4', 'N3', 'N2', 'N1'];
 const groupColor = { ichidan: 'bg-emerald-500', godan: 'bg-blue-500', irregular: 'bg-orange-500' };
@@ -254,14 +255,14 @@ export default function VerbStudy() {
 
             {/* Speak kanji */}
             <div className="w-8 shrink-0" onClick={e => e.stopPropagation()}>
-              <SpeakButton text={verb.dictionary} size="sm" />
+              <SpeakButton text={verb.dictionary} audioUrl={verbAudioMap[verb.romaji]} size="sm" />
             </div>
 
             {/* Romaji + speak romaji */}
             <div className="w-36 shrink-0 hidden sm:flex items-center gap-1">
               <span className="text-sm font-medium text-foreground/80">{verb.romaji}</span>
               <div onClick={e => e.stopPropagation()}>
-                <SpeakButton text={verb.hiragana} size="sm" />
+                <SpeakButton text={verb.hiragana} audioUrl={verbAudioMap[verb.romaji]} size="sm" />
               </div>
             </div>
 
