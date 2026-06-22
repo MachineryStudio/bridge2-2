@@ -18,7 +18,7 @@ export default function AppLayout() {
   const playerStats = progressList?.[0] || null;
 
   return (
-    <div className="min-h-screen bg-background washi-bg seigaiha-bg">
+    <div className="min-h-screen bg-background">
       <Navbar playerStats={playerStats} />
       <main className="pt-16">
         <Outlet />

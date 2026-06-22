@@ -9,46 +9,47 @@
     --font-japanese: 'Noto Sans JP', sans-serif;
     --font-latin: 'Inter', sans-serif;
 
-    /* Washi White light theme */
-    --background: 30 30% 97%;          /* warm cream */
-    --foreground: 20 30% 15%;          /* dark warm brown */
+    /* kumaGO — soft cream & sky-blue palette */
+    --background: 45 40% 96%;          /* warm cream #F5F0E8 */
+    --foreground: 220 50% 12%;         /* deep navy #0E1A30 */
     --card: 0 0% 100%;
-    --card-foreground: 20 30% 15%;
+    --card-foreground: 220 50% 12%;
     --popover: 0 0% 100%;
-    --popover-foreground: 20 30% 15%;
-    --primary: 20 25% 20%;             /* dark bear brown */
-    --primary-foreground: 30 30% 97%;
-    --secondary: 30 20% 92%;           /* soft peach/cream */
-    --secondary-foreground: 20 25% 25%;
-    --muted: 30 15% 88%;
-    --muted-foreground: 20 10% 45%;
-    --accent: 35 90% 55%;              /* warm amber/orange */
+    --popover-foreground: 220 50% 12%;
+    --primary: 220 60% 25%;            /* lighthouse navy #1A2A4A */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 60% 88%;          /* soft sky blue */
+    --secondary-foreground: 220 50% 20%;
+    --muted: 40 20% 91%;
+    --muted-foreground: 220 15% 50%;
+    --accent: 35 95% 58%;              /* kumaGO amber/orange */
     --accent-foreground: 0 0% 100%;
-    --destructive: 8 62% 44%;          /* #B53A2B brick red */
+    --destructive: 8 62% 44%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 15% 85%;
-    --input: 220 15% 85%;
-    --ring: 220 45% 19%;
-    --chart-1: 43 55% 52%;             /* gold */
-    --chart-2: 220 45% 19%;            /* indigo */
-    --chart-3: 180 100% 25%;           /* teal #008080 */
-    --chart-4: 0 100% 71%;             /* coral */
-    --chart-5: 144 25% 39%;            /* moss green */
-    --radius: 0.75rem;
-    --sidebar-background: 20 25% 15%;
-    --sidebar-foreground: 30 30% 95%;
-    --sidebar-primary: 35 90% 55%;
-    --sidebar-primary-foreground: 20 25% 15%;
-    --sidebar-accent: 20 20% 22%;
-    --sidebar-accent-foreground: 30 30% 95%;
-    --sidebar-border: 20 15% 25%;
-    --sidebar-ring: 35 90% 55%;
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 220 60% 25%;
+    --chart-1: 35 95% 58%;
+    --chart-2: 220 60% 25%;
+    --chart-3: 195 70% 55%;
+    --chart-4: 0 100% 71%;
+    --chart-5: 144 25% 39%;
+    --radius: 1rem;
+    --sidebar-background: 220 60% 20%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 35 95% 58%;
+    --sidebar-primary-foreground: 220 60% 15%;
+    --sidebar-accent: 220 55% 28%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 40% 30%;
+    --sidebar-ring: 35 95% 58%;
 
     /* Custom semantic tokens */
-    --success: 144 25% 39%;            /* #4A7C59 moss green */
+    --success: 144 25% 39%;
     --success-foreground: 0 0% 98%;
-    --teal: 180 100% 25%;              /* #008080 */
-    --coral: 0 100% 71%;               /* #FF6B6B */
+    --kuma-blue: 195 65% 70%;          /* bear body sky-blue */
+    --kuma-cream: 45 40% 94%;          /* background cream */
+    --kuma-pink: 340 80% 78%;          /* cheek pink */
   }
 
   .dark {
@@ -58,32 +59,32 @@
     --card-foreground: 60 10% 93%;
     --popover: 220 35% 12%;
     --popover-foreground: 60 10% 93%;
-    --primary: 43 55% 52%;
+    --primary: 35 95% 58%;
     --primary-foreground: 220 40% 10%;
     --secondary: 220 25% 20%;
     --secondary-foreground: 60 10% 85%;
     --muted: 220 20% 18%;
     --muted-foreground: 220 10% 52%;
-    --accent: 43 55% 52%;
+    --accent: 35 95% 58%;
     --accent-foreground: 220 40% 10%;
     --destructive: 8 62% 48%;
     --destructive-foreground: 0 0% 98%;
     --border: 220 20% 22%;
     --input: 220 20% 22%;
-    --ring: 43 55% 52%;
-    --chart-1: 43 55% 52%;
-    --chart-2: 180 100% 35%;
+    --ring: 35 95% 58%;
+    --chart-1: 35 95% 58%;
+    --chart-2: 195 70% 55%;
     --chart-3: 0 100% 71%;
     --chart-4: 144 25% 50%;
     --chart-5: 220 45% 60%;
     --sidebar-background: 220 40% 8%;
     --sidebar-foreground: 60 10% 93%;
-    --sidebar-primary: 43 55% 52%;
+    --sidebar-primary: 35 95% 58%;
     --sidebar-primary-foreground: 220 40% 10%;
     --sidebar-accent: 220 35% 16%;
     --sidebar-accent-foreground: 60 10% 93%;
     --sidebar-border: 220 20% 18%;
-    --sidebar-ring: 43 55% 52%;
+    --sidebar-ring: 35 95% 58%;
   }
 }
 
