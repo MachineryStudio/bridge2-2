@@ -1,24 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLang } from '@/lib/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { BookOpen, Gamepad2, Mic, GraduationCap, ArrowRight, Star } from 'lucide-react';
+import KumaMascot from '@/components/home/KumaMascot';
 
 const LOGO_URL = "https://media.base44.com/images/public/69f421629a32baa29433f382/b4ec08f13_Screenshot2026-05-11202143.jpg";
-
-// Rotating mascot images
-const MASCOT_IMAGES = [
-  "https://media.base44.com/images/public/69f421629a32baa29433f382/45159e0bf_Screenshot2026-05-11204106.jpg",
-  "https://media.base44.com/images/public/69f421629a32baa29433f382/365753c65_Screenshot2026-05-11204140.jpg",
-  "https://media.base44.com/images/public/69f421629a32baa29433f382/e95b3160a_Screenshot2026-05-11204149.jpg",
-  "https://media.base44.com/images/public/69f421629a32baa29433f382/6b7f7fe3a_Screenshot2026-05-11204159.jpg",
-  "https://media.base44.com/images/public/69f421629a32baa29433f382/dd139dae1_Screenshot2026-05-11204208.jpg",
-  "https://media.base44.com/images/public/69f421629a32baa29433f382/9acc0e2b7_Screenshot2026-05-11204231.jpg",
-  "https://media.base44.com/images/public/69f421629a32baa29433f382/5d4052410_Screenshot2026-05-11204240.jpg",
-  "https://media.base44.com/images/public/69f421629a32baa29433f382/dce2df14f_Screenshot2026-05-11213807.jpg",
-];
 
 const features = [
   { icon: BookOpen,     titleKey: 'feature1Title', descKey: 'feature1Desc', color: 'text-sky-500',    bg: 'bg-sky-100',    border: 'border-sky-200' },
@@ -29,40 +18,43 @@ const features = [
 
 export default function Home() {
   const { t } = useLang();
-  const [mascotIdx, setMascotIdx] = useState(0);
-
-  // Rotate mascot every 3 s
-  useEffect(() => {
-    const id = setInterval(() => setMascotIdx(i => (i + 1) % MASCOT_IMAGES.length), 3000);
-    return () => clearInterval(id);
-  }, []);
 
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(160deg, #EAF4FB 0%, #FFF8EC 60%, #FDE8F0 100%)' }}>
 
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden pt-24 pb-16 px-4">
-        <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+      <section className="relative overflow-hidden pt-24 pb-20 px-4">
+        <div className="max-w-6xl mx-auto flex flex-col items-center gap-10">
 
-          {/* Text side */}
+          {/* Mascot — centered at top */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="flex-1 text-center lg:text-left"
+            className="w-full flex justify-center"
+          >
+            <KumaMascot />
+          </motion.div>
+
+          {/* Text — centered below */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="text-center max-w-2xl"
           >
             {/* Brand logo */}
-            <img src={LOGO_URL} alt="kumaGO 橋" className="h-14 w-auto object-contain mb-6 mx-auto lg:mx-0 rounded-xl shadow-md" />
+            <img src={LOGO_URL} alt="kumaGO 橋" className="h-14 w-auto object-contain mb-5 mx-auto rounded-xl shadow-md" />
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-primary leading-tight">
               kuma<span className="text-accent">GO</span>
               <span className="font-jp ml-3 text-primary/80">橋</span>
             </h1>
-            <p className="mt-4 text-lg text-foreground/70 max-w-md mx-auto lg:mx-0 leading-relaxed">
+            <p className="mt-4 text-lg text-foreground/70 max-w-md mx-auto leading-relaxed">
               {t('heroSubtitle')}
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 mt-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
               <Link to="/verbs">
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 rounded-full shadow-lg text-base font-bold">
                   {t('startFree')} <ArrowRight className="w-4 h-4 ml-1" />
@@ -76,46 +68,11 @@ export default function Home() {
             </div>
 
             {/* Small trust badges */}
-            <div className="flex items-center gap-4 mt-6 justify-center lg:justify-start flex-wrap">
+            <div className="flex items-center gap-3 mt-6 justify-center flex-wrap">
               {['N5–N1 JLPT', 'Free to start', '日本語学習'].map(badge => (
                 <span key={badge} className="flex items-center gap-1 text-xs font-semibold text-primary/70 bg-white/70 border border-border/40 rounded-full px-3 py-1 shadow-sm">
                   <Star className="w-3 h-3 text-accent" /> {badge}
                 </span>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Mascot side */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="flex-shrink-0 relative"
-          >
-            {/* Soft glow circle */}
-            <div className="absolute inset-0 rounded-full bg-sky-200/40 blur-3xl scale-110" />
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/80">
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={mascotIdx}
-                  src={MASCOT_IMAGES[mascotIdx]}
-                  alt="kumaGO mascot"
-                  className="w-full h-full object-cover"
-                  initial={{ opacity: 0, scale: 1.05 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.4 }}
-                />
-              </AnimatePresence>
-            </div>
-            {/* Dots indicator */}
-            <div className="flex justify-center gap-1.5 mt-3">
-              {MASCOT_IMAGES.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setMascotIdx(i)}
-                  className={`w-2 h-2 rounded-full transition-all ${i === mascotIdx ? 'bg-primary w-4' : 'bg-primary/25'}`}
-                />
               ))}
             </div>
           </motion.div>
