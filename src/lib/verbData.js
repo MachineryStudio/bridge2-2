@@ -5,6 +5,9 @@
 //        conditional, conditional_neg
 // forms_romaji mirrors the same keys
 
+import { conjugate } from './verbConjugator';
+import { newVerbs } from './newVerbs';
+
 export const verbData = [
   // ===== N5 VERBS =====
   {
@@ -661,3 +664,15 @@ export const verbData = [
     example_sentence:"後で連絡します。",example_sentence_en:"I will contact you later."
   },
 ];
+
+// Append conjugated forms for the extra alphabetical verb list
+// (deduped against the canonical verbs above by dictionary form).
+(function () {
+  const existing = new Set(verbData.map(v => v.dictionary));
+  const generated = newVerbs
+    .filter(v => !existing.has(v.dictionary))
+    .map(v => conjugate(v))
+    .sort((a, b) => (a.romaji || '').localeCompare(b.romaji || ''));
+  generated.forEach(g => existing.add(g.dictionary));
+  verbData.push(...generated);
+})();
