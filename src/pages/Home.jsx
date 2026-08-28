@@ -8,6 +8,7 @@ import { BookOpen, Gamepad2, Mic, GraduationCap, ArrowRight, Star } from 'lucide
 import KumaMascot from '@/components/home/KumaMascot';
 
 const LOGO_URL = "https://media.base44.com/images/public/69f421629a32baa29433f382/b4ec08f13_Screenshot2026-05-11202143.jpg";
+const LIGHTHOUSE_LOGO_URL = "https://media.base44.com/images/public/69f421629a32baa29433f382/59d49fe24_42fd2424-94de-47d1-b61e-d609c6037d88.png";
 
 const features = [
   { icon: BookOpen,     titleKey: 'feature1Title', descKey: 'feature1Desc', color: 'text-sky-500',    bg: 'bg-sky-100',    border: 'border-sky-200' },
@@ -50,6 +51,10 @@ export default function Home() {
               kuma<span className="text-accent">GO</span>
               <span className="font-jp ml-3 text-primary/80">橋</span>
             </h1>
+            <div className="flex items-center justify-center gap-2 mt-3">
+              <span className="text-sm text-muted-foreground font-medium">by</span>
+              <img src={LIGHTHOUSE_LOGO_URL} alt="LIGHTHOUSE 橋" className="h-7 w-auto object-contain rounded-md" />
+            </div>
             <p className="mt-4 text-lg text-foreground/70 max-w-md mx-auto leading-relaxed">
               {t('heroSubtitle')}
             </p>
